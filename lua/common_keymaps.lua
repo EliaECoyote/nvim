@@ -19,6 +19,16 @@ vim.keymap.set(
   }
 )
 
+vim.keymap.set(
+  "n",
+  "<leader>fb",
+  ":Explore<cr>",
+  {
+    silent = true,
+    desc = "Explore"
+  }
+)
+
 -- Tabs mappings
 vim.keymap.set(
   "n",

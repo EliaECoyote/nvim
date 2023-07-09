@@ -17,12 +17,6 @@ vim.g.exrc = true
 -- inside project-specific .vimrc files unless they’re owned by you.
 vim.g.secure = true
 
--- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrwSettings = 1
-vim.g.loaded_netrwFileHandlers = 1
-
 require("common_keymaps")
 require("config_theme")
 require("config_copy")

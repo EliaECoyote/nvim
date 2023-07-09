@@ -55,21 +55,6 @@ require("lazy").setup({
       "jose-elias-alvarez/null-ls.nvim",
       config = function() require("config_null_ls") end
     },
-    -- Explorer
-    {
-      "vifm/vifm.vim",
-      init = function()
-        vim.keymap.set(
-          "n",
-          "<leader>fb",
-          ":Vifm<cr>",
-          {
-            silent = true,
-            desc = "Start Vifm on local buffer path"
-          }
-        )
-      end
-    },
     {
       "lewis6991/gitsigns.nvim",
       name = "gitsigns",
