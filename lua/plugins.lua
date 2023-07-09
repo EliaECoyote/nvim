@@ -97,7 +97,10 @@ require("lazy").setup({
       dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function()
         local fzf = require("fzf-lua")
-        fzf.setup({ files = { git_icons = false, file_icons = false } })
+        fzf.setup({
+          winopts = { width = 1, height = 20, row = 1 },
+          files = { git_icons = false, file_icons = false }
+        })
         vim.keymap.set("n", "<leader>f?", fzf.builtin)
         vim.keymap.set("n", "<leader>p", fzf.files)
         vim.keymap.set("n", "<leader>o", fzf.buffers)
