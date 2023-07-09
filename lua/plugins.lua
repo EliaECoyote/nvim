@@ -93,18 +93,57 @@ require("lazy").setup({
       config = function() require("config_sandwich") end
     },
     {
-      "nvim-telescope/telescope.nvim",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-fzf-native.nvim",
-        "nvim-telescope/telescope-live-grep-args.nvim",
-        "nvim-tree/nvim-web-devicons",
-      },
-      config = function() require("config_telescope") end
-    },
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
+      "ibhagwan/fzf-lua",
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      config = function()
+        local fzf = require("fzf-lua")
+        fzf.setup({ files = { git_icons = false, file_icons = false } })
+        vim.keymap.set("n", "<leader>f?", fzf.builtin)
+        vim.keymap.set("n", "<leader>p", fzf.files)
+        vim.keymap.set("n", "<leader>o", fzf.buffers)
+        vim.keymap.set("n", "<leader>fo", fzf.oldfiles)
+        vim.keymap.set("n", "<leader>fr", fzf.live_grep_resume)
+        vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
+        vim.keymap.set("n", "<leader>fw", function()
+          local BOOKMARKS_FOLDERS = {
+            "~/.config/nvim/",
+            "~/.config/karabiner/",
+            "~/.config/vifm/",
+            "~/.local/bin/",
+            "~/.github/",
+            "~/Library/CloudStorage/Dropbox/",
+            "~/dev/playground",
+          }
+          local BOOKMARKS_FILES = {
+            "~/.zshrc",
+            "~/.bashrc",
+            "~/.workrc",
+            "~/.shellrc",
+            "~/.ideavimrc",
+            "~/.profile",
+            "~/.bash_profile",
+            "~/.gitconfig",
+            "~/.gitignore",
+            "~/.tmux.conf",
+            "~/.config/vifm/vifmrc",
+            "~/.config/alacritty.yml",
+            "~/.config/lazygit/config.yml",
+            "~/.config/lazydocker/config.yml",
+            "~/.config/karabiner/karabiner.json",
+            "~/Brewfile",
+          }
+          fzf.files({
+            prompt = "Bookmarks> ",
+            cmd = "fd . "
+                .. table.concat(BOOKMARKS_FOLDERS, " ")
+                .. " | sed '1i\\ \\n"
+                .. table.concat(BOOKMARKS_FILES, "\\\n")
+                .. "'"
+          })
+        end)
+        vim.keymap.set("n", "gr", fzf.lsp_references)
+        vim.keymap.set("n", "gd", fzf.lsp_definitions)
+      end
     },
     {
       "stevearc/dressing.nvim",
@@ -116,11 +155,7 @@ require("lazy").setup({
         },
         select = {
           -- Priority list of preferred vim.select implementations
-          backend = { "telescope", "builtin" },
-          -- Options for telescope selector
-          -- These are passed into the telescope picker directly. Can be used like:
-          -- telescope = require('telescope.themes').get_ivy({...})
-          telescope = nil,
+          backend = { "fzf_lua", "builtin" },
         },
       }
     },
