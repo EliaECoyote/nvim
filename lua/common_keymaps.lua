@@ -1,7 +1,5 @@
 local utils_buffer = require("lib.utils_buffer")
 
-vim.g.maplocalleader = " "
-
 vim.keymap.set(
   "",
   "<ScrollWheelUp>",
