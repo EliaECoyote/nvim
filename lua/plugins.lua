@@ -44,9 +44,7 @@ require("lazy").setup({
       dependencies = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
       config = function()
         local constants_lsp = require("lib.constants_lsp")
-        require("mason").setup({
-          ui = { border = "rounded" },
-        })
+        require("mason").setup()
         require("mason-lspconfig").setup({
           ensure_installed = constants_lsp.LSP_SERVERS
         })
@@ -191,5 +189,4 @@ require("lazy").setup({
   },
   {
     defaults = { lazy = false },
-    ui = { border = "rounded" }
   })
