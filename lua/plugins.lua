@@ -90,7 +90,13 @@ require("lazy").setup({
     },
     {
       "machakann/vim-sandwich",
-      config = function() require("config_sandwich") end
+      config = function()
+        -- Use vim-surround keybindings to avoid replacing `s`:
+        -- https://github.com/machakann/vim-sandwich/wiki/Introduce-vim-surround-keymappings
+        vim.cmd [[
+          runtime macros/sandwich/keymap/surround.vim
+        ]]
+      end
     },
     {
       "ibhagwan/fzf-lua",
