@@ -155,7 +155,7 @@ require("lazy").setup({
             prompt = "Bookmarks> ",
             cmd = "fd . "
                 .. table.concat(BOOKMARKS_FOLDERS, " ")
-                .. " | sed '1i\\ \\n"
+                .. " | sed '1i\\\\n"
                 .. table.concat(BOOKMARKS_FILES, "\\\n")
                 .. "'"
           })
