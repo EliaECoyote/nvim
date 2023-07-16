@@ -18,6 +18,9 @@ vim.opt.signcolumn = "yes:1"
 
 vim.opt.conceallevel = 2
 
+-- Hide netrw banner
+vim.g.netrw_banner = 0
+
 -- Use spaces instead of tabs
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
