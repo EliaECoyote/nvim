@@ -79,18 +79,7 @@ vim.g.markdown_fenced_languages = {
 
 -- For LSP-related UI customzations, see
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-vim.diagnostic.config({
-  float = { source = "always", border = "rounded" },
-  virtual_text = false,
-})
-
--- Override all LSP floating windows borders
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or "rounded"
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
+vim.diagnostic.config({ virtual_text = false })
 
 function _G.custom_status_line()
   local file_name = "%-.16t"
