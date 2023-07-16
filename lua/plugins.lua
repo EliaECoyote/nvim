@@ -24,9 +24,9 @@ require("lazy").setup({
       "tpope/vim-unimpaired",
       init = function()
         vim.g.nremap = {
-          ['yo<Esc>'] = '',
-          ['yo'] = '',
-          ['>p'] = ''
+          ["yo<Esc>"] = "<nop>",
+          ["yo"] = "<nop>",
+          [">p"] = "<nop>"
         }
       end
     },
