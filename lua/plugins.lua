@@ -117,7 +117,7 @@ require("lazy").setup({
         })
         vim.keymap.set("n", "<leader>f?", fzf.builtin)
         vim.keymap.set("n", "<leader>p", fzf.files)
-        vim.keymap.set("n", "<leader>o", fzf.buffers)
+        vim.keymap.set("n", "<leader>\\", fzf.buffers)
         vim.keymap.set("n", "<leader>fo", fzf.oldfiles)
         vim.keymap.set("n", "<leader>fr", fzf.live_grep_resume)
         vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
