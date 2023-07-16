@@ -200,6 +200,14 @@ function M.setup_theme(colors, status_colors)
     GitSignsAddNr                 = { bg = status_colors.success },
     GitSignsChangeNr              = { bg = status_colors.warn },
     GitSignsDeleteNr              = { bg = status_colors.error },
+    -- Org highlights
+    OrgTSHeadlineLevel2           = { fg = colors.base06 },
+    OrgTSHeadlineLevel3           = { fg = colors.base09 },
+    OrgTSHeadlineLevel4           = { fg = colors.base0A },
+    OrgTSHeadlineLevel5           = { fg = colors.base0B },
+    OrgTSHeadlineLevel6           = { fg = colors.base0C },
+    OrgTSHeadlineLevel7           = { fg = colors.base0E },
+    OrgTSHeadlineLevel8           = { fg = colors.base0F },
     -- Git highlights
     gitcommitOverflow             = { fg = colors.base08 },
     gitcommitSummary              = { fg = colors.base0B },
