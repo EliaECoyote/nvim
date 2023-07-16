@@ -36,8 +36,6 @@ require("lazy").setup({
         vim.g.user_emmet_leader_key = "<C-,>"
       end
     },
-    -- Makes gx cmd work for urls and files
-    "stsewd/gx-extended.vim",
     -- LSP goodies
     {
       "neovim/nvim-lspconfig",
