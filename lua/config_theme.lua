@@ -41,15 +41,6 @@ vim.opt.textwidth = 0
 -- Unfold by default
 vim.opt.foldenable = false
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "gitcommit",
-  callback = function()
-    vim.opt_local.textwidth = 72
-    vim.opt_local.colorcolumn = "+1"
-  end,
-  group = vim.api.nvim_create_augroup("CommitMsg", { clear = true }),
-})
-
 -- Makes vimdiff easier to read
 vim.opt.diffopt:append("vertical")
 
