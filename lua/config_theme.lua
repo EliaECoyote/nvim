@@ -14,7 +14,7 @@ vim.opt.laststatus = 3
 
 -- Default indentation & font settings
 vim.opt.smartindent = true
-vim.api.nvim_command("filetype plugin indent on")
+vim.cmd("filetype plugin indent on")
 
 -- Always display signcolumn with width 1
 vim.opt.signcolumn = "yes:1"
