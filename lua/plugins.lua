@@ -144,7 +144,7 @@ require("lazy").setup({
         vim.keymap.set("n", "<leader>p", fzf.files)
         vim.keymap.set("n", "<leader>\\", fzf.buffers)
         vim.keymap.set("n", "<leader>fo", fzf.oldfiles)
-        vim.keymap.set("n", "<leader>fr", fzf.live_grep_resume)
+        vim.keymap.set("n", "<leader>fr", fzf.resume)
         vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
         vim.keymap.set("n", "<leader>fw", function()
           local BOOKMARKS_FOLDERS = {
