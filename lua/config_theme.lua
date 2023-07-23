@@ -20,11 +20,6 @@ vim.opt.laststatus = 3
 vim.opt.smartindent = true
 vim.cmd("filetype plugin indent on")
 
--- Automatic formatting of paragraph while typing
-vim.opt.formatoptions:append("a")
--- Trailing white space indicates that the paragraph continues in the next line
-vim.opt.formatoptions:append("w")
-
 -- Always display signcolumn with width 1
 vim.opt.signcolumn = "yes:1"
 
