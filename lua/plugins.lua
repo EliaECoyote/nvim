@@ -20,6 +20,7 @@ require("lazy").setup({
     -- Git wrapper
     "tpope/vim-fugitive",
     -- Handy bracket mappings
+    "nvim-treesitter/playground",
     {
       "tpope/vim-unimpaired",
       init = function()
@@ -105,11 +106,6 @@ require("lazy").setup({
           }
         })
       end
-    },
-    {
-      'akinsho/org-bullets.nvim',
-      dependencies = "nvim-treesitter/nvim-treesitter",
-      opts = {}
     },
     {
       "machakann/vim-sandwich",
