@@ -92,7 +92,7 @@ function M.setup_theme(colors, status_colors)
     WarningMsg                    = { fg = status_colors.warn_fg },
     WildMenu                      = { fg = colors.base00, bg = colors.base05 },
     Title                         = { fg = colors.base0D, bold = true },
-    Conceal                       = { fg = colors.base0D, bg = colors.base00 },
+    Conceal                       = { fg = colors.base0D },
     Cursor                        = { fg = colors.base05, bg = colors.base00, reverse = true },
     NonText                       = { fg = colors.base03 },
     Whitespace                    = { fg = colors.base03 },
