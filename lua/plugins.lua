@@ -246,6 +246,33 @@ require("lazy").setup({
       "mfussenegger/nvim-dap",
       config = function() require("config_dap") end
     },
+    {
+      "glacambre/firenvim",
+      -- Lazy load firenvim
+      -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+      cond = not not vim.g.started_by_firenvim,
+      build = function()
+        require("lazy").load({ plugins = "firenvim", wait = true })
+        vim.fn["firenvim#install"](0)
+      end,
+      config = function()
+        vim.g.firenvim_config = {
+          globalSettings = { alt = "all" },
+          localSettings = {
+            [".*"] = {
+              priority = 0,
+              cmdline  = "neovim",
+              content  = "text",
+              takeover = "never",
+              guifont  = "monospace:h50"
+            }
+          }
+        }
+        if vim.g.started_by_firenvim then
+          vim.opt.guifont = "FiraMono Nerd Font Mono:h25"
+        end
+      end
+    },
   },
   {
     defaults = { lazy = false },
