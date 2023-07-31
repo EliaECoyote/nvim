@@ -20,7 +20,6 @@ require("lazy").setup({
     -- Git wrapper
     "tpope/vim-fugitive",
     -- Handy bracket mappings
-    "nvim-treesitter/playground",
     {
       "tpope/vim-unimpaired",
       init = function()
