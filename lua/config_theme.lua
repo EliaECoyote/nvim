@@ -23,9 +23,6 @@ vim.cmd("filetype plugin indent on")
 -- Always display signcolumn with width 1
 vim.opt.signcolumn = "yes:1"
 
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = 'nc'
-
 -- Hide netrw banner
 vim.g.netrw_banner = 0
 
