@@ -17,9 +17,6 @@ vim.g.exrc = true
 -- inside project-specific .vimrc files unless they’re owned by you.
 vim.g.secure = true
 
--- Always sync current directory & browsing directory.
-vim.g.netrw_keepdir = 0
-
 require("common_keymaps")
 require("config_theme")
 require("config_copy")
