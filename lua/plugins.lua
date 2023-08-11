@@ -103,7 +103,7 @@ require("lazy").setup({
               org_do_demote                = false,
               org_next_visible_heading     = false,
               org_previous_visible_heading = false,
-              org_open_at_point  = "<CR>",
+              org_open_at_point            = "<CR>",
             },
             agenda = {
               org_agenda_later   = "<C-n>",
