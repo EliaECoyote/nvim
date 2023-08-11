@@ -19,6 +19,8 @@ require("lazy").setup({
     "tpope/vim-commentary",
     -- Git wrapper
     "tpope/vim-fugitive",
+    -- Netrw improvements
+    "tpope/vim-vinegar",
     -- Handy bracket mappings
     {
       "tpope/vim-unimpaired",
