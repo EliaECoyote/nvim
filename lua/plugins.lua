@@ -93,18 +93,22 @@ require("lazy").setup({
       "nvim-orgmode/orgmode",
       dependencies = { "nvim-treesitter/nvim-treesitter" },
       config = function()
-        require('orgmode').setup({
+        require("orgmode").setup({
           org_agenda_files = { "~/Library/CloudStorage/Dropbox/org" },
           org_default_notes_file = "~/Library/CloudStorage/Dropbox/org/refile.org",
           org_hide_emphasis_markers = true,
           mappings = {
-            org = {
+            org    = {
               org_do_promote               = false,
               org_do_demote                = false,
               org_next_visible_heading     = false,
               org_previous_visible_heading = false,
-              org_open_at_point            = "<cr>",
-            }
+              org_open_at_point  = "<CR>",
+            },
+            agenda = {
+              org_agenda_later   = "<C-n>",
+              org_agenda_earlier = "<C-p>",
+            },
           }
         })
       end
