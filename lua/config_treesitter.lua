@@ -1,7 +1,5 @@
 local configs = require("nvim-treesitter.configs")
 
-require("orgmode").setup_ts_grammar()
-
 configs.setup({
   auto_install = true,
   highlight = {
