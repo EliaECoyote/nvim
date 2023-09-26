@@ -76,7 +76,7 @@ end
 vim.keymap.set(
   "n",
   "<leader>bo",
-  ":%bdelete|edit #|normal `\"<cr>",
+  ":%bd|e#<cr>",
   {
     noremap = true,
     silent = true,
