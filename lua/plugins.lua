@@ -32,12 +32,6 @@ require("lazy").setup({
         }
       end
     },
-    {
-      "mattn/emmet-vim",
-      init = function()
-        vim.g.user_emmet_leader_key = "<C-,>"
-      end
-    },
     -- LSP goodies
     {
       "neovim/nvim-lspconfig",
