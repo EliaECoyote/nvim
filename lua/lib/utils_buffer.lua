@@ -73,26 +73,4 @@ function utils_buffer.delete_buffer(bufnr, opts, delete_unmodified)
   return true
 end
 
-function utils_buffer.delete_other_buffers(opts, delete_unmodified)
-  local cur_buf = utils_buffer.get_real_bufnr(0)
-  local deleted_count, invalid_count = 0, 0
-  -- Get list of valid and listed buffers
-  local buffers = vim.tbl_filter(
-    function(buf)
-      return vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_get_option(buf, "buflisted")
-    end,
-    vim.api.nvim_list_bufs()
-  )
-  for _, candidate in ipairs(buffers) do
-    if candidate ~= cur_buf then
-      if utils_buffer.delete_buffer(candidate, opts, delete_unmodified) then
-        deleted_count = deleted_count + 1
-      else
-        invalid_count = invalid_count + 1
-      end
-    end
-  end
-  return invalid_count, deleted_count
-end
-
 return utils_buffer

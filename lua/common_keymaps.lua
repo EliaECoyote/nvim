@@ -76,15 +76,7 @@ end
 vim.keymap.set(
   "n",
   "<leader>bo",
-  function()
-    local invalid_count, deleted_count = utils_buffer
-        .delete_other_buffers({ force = true, unload = true }, false)
-    if invalid_count > 0 then
-      print("⚠️ : " .. invalid_count .. " buffers are in modified state")
-    else
-      print(deleted_count .. " buffers deleted")
-    end
-  end,
+  ":%bdelete|edit #|normal `\"<cr>",
   {
     noremap = true,
     silent = true,
