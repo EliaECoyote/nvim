@@ -146,7 +146,7 @@ require("lazy").setup({
             "~/.tmux.conf",
             "~/.wezterm.lua",
             "~/.config/vifm/vifmrc",
-            "~/.config/alacritty.yml",
+            "~/.config/alacritty.toml",
             "~/.config/lazygit/config.yml",
             "~/.config/lazydocker/config.yml",
             "~/.config/karabiner/karabiner.json",
