@@ -16,9 +16,9 @@ vim.cmd.colorscheme("coyote")
 -- Global statusline
 vim.opt.laststatus = 3
 
--- Default indentation & font settings
-vim.opt.smartindent = true
+-- Indentation settings
 vim.cmd("filetype plugin indent on")
+vim.opt.autoindent = true
 
 -- Always display signcolumn with width 1
 vim.opt.signcolumn = "yes:1"
