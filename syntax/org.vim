@@ -2,7 +2,10 @@
 " (we're adding two markdown-like variants for =code= and blockquotes)
 " -----------------------------------------------------------------------------
 " Source: https://github.com/jceb/vim-orgmode/blob/master/syntax/org.vim
-"
+
+" Custom settings:
+let g:org_heading_shade_leading_stars = 0
+
 " Do we use aggresive conceal?
 if exists("b:org_aggressive_conceal")
     let s:conceal_aggressively=b:org_aggressive_conceal
