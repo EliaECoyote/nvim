@@ -73,11 +73,6 @@ require("lazy").setup({
       },
     },
     {
-      'nvim-treesitter/nvim-treesitter',
-      build = ":TSUpdate",
-      config = function() require("config_treesitter") end
-    },
-    {
       "j-hui/fidget.nvim",
       tag = "legacy",
       name = "fidget",
