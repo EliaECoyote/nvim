@@ -58,6 +58,8 @@ vim.opt.shortmess:append("c")
 -- Disable intro message
 vim.opt.shortmess:append("I")
 
+-- Use default cursor in insert mode
+vim.opt.guicursor = ""
 
 -- Highlights end-of-line
 vim.opt.list = true
