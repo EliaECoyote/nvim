@@ -50,6 +50,38 @@ vim.keymap.set(
   }
 )
 
+vim.keymap.set(
+  "n",
+  "<C-s>",
+  "\"_diwP",
+  {
+    noremap = true,
+    silent = true,
+    desc = "Stamp (Del & replace with yanked text)"
+  }
+)
+
+vim.keymap.set(
+  { "n", "v" },
+  "Y",
+  "\"+y",
+  {
+    noremap = true,
+    silent = true,
+    desc = "Yanked text to-clipboard shortcut"
+  }
+)
+
+vim.keymap.set(
+  "n",
+  "yp",
+  ":let @+ = expand(\"%\")<cr>",
+  {
+    noremap = true,
+    desc = "Yank % to clipboard"
+  }
+)
+
 local VOCALS_ACCENTS = {
   a = "à",
   A = "À",

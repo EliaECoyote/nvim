@@ -19,6 +19,5 @@ vim.g.secure = true
 
 require("common_keymaps")
 require("config_theme")
-require("config_copy")
 require("config_search_and_replace")
 require("plugins")
