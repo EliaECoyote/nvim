@@ -193,25 +193,12 @@ require("lazy").setup({
     -- Open current line on github
     "ruanyl/vim-gh-line",
     {
-      "nvim-neotest/neotest",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-neotest/neotest-python",
-        "nvim-neotest/neotest-go",
-        "nvim-neotest/neotest-jest",
-      },
+      "vim-test/vim-test",
       config = function()
-        require("neotest").setup({
-          adapters = {
-            require("neotest-python"),
-            require("neotest-go"),
-            require("neotest-jest"),
-          }
-        })
-        vim.keymap.set("n", "tt", function() require("neotest").run.run() end)
-        vim.keymap.set("n", "tf", function() require("neotest").run.run(vim.fn.expand("%")) end)
-        vim.keymap.set("n", "tp", function() require("neotest").output_panel.toggle() end)
+        vim.g["test#strategy"] = "neovim"
+        vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
+        vim.keymap.set("n", "t<C-f>", ":TestFile<cr>")
+        vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
       end
     },
     {
