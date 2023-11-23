@@ -17,6 +17,11 @@ vim.g.exrc = true
 -- inside project-specific .vimrc files unless they’re owned by you.
 vim.g.secure = true
 
+vim.filetype.add({
+  -- Sets filetypes based on file extension.
+  extension = { mdx = "mdx" }
+})
+
 require("common_keymaps")
 require("config_theme")
 require("config_search_and_replace")
