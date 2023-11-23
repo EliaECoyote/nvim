@@ -164,6 +164,13 @@ vim.cmd([[
 ]])
 
 vim.keymap.set(
+  "c",
+  "<C-A>",
+  "<Home>",
+  { desc = "Move to start of line." }
+)
+
+vim.keymap.set(
   "n",
   "yo",
   function()
