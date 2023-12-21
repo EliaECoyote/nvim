@@ -1,0 +1,90 @@
+[submodule "pack/tpope/start/vim-commentary"]
+	path = pack/tpope/start/vim-commentary
+	url = https://tpope.io/vim/commentary.git
+[submodule "pack/tpope/start/vim-sleuth"]
+	path = pack/tpope/start/vim-sleuth
+	url = https://tpope.io/vim/sleuth.git
+[submodule "pack/tpope/start/vim-fugitive"]
+	path = pack/tpope/start/vim-fugitive
+	url = https://tpope.io/vim/fugitive.git
+[submodule "pack/github/start/copilot.vim"]
+	path = pack/github/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
+[submodule "pack/tpope/start/vim-vinegar"]
+	path = pack/tpope/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule "pack/tpope/start/vim-unimpaired"]
+	path = pack/tpope/start/vim-unimpaired
+	url = https://tpope.io/vim/unimpaired.git
+[submodule "pack/neovim/start/nvim-lspconfig"]
+	path = pack/neovim/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "pack/williamboman/start/mason.nvim"]
+	path = pack/williamboman/start/mason.nvim
+	url = https://github.com/williamboman/mason.nvim
+[submodule "pack/williamboman/start/mason-lspconfig.nvim"]
+	path = pack/williamboman/start/mason-lspconfig.nvim
+	url = https://github.com/williamboman/mason-lspconfig.nvim
+[submodule "pack/nvim-lua/start/plenary.nvim"]
+	path = pack/nvim-lua/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "pack/lewis6991/start/gitsigns.nvim"]
+	path = pack/lewis6991/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/nvim-treesitter/start/nvim-treesitter"]
+	path = pack/nvim-treesitter/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/j-hui/start/fidget.nvim"]
+	path = pack/j-hui/start/fidget.nvim
+	url = https://github.com/j-hui/fidget.nvim
+[submodule "pack/tpope/start/vim-surround"]
+	path = pack/tpope/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/ibhagwan/start/fzf-lua"]
+	path = pack/ibhagwan/start/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua
+[submodule "pack/nvim-tree/start/nvim-web-devicons"]
+	path = pack/nvim-tree/start/nvim-web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons
+[submodule "pack/hrsh7th/start/nvim-cmp"]
+	path = pack/hrsh7th/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/hrsh7th/start/cmp-buffer"]
+	path = pack/hrsh7th/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "pack/hrsh7th/start/cmp-path"]
+	path = pack/hrsh7th/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "pack/hrsh7th/start/cmp-cmdline"]
+	path = pack/hrsh7th/start/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline
+[submodule "pack/hrsh7th/start/cmp-nvim-lsp"]
+	path = pack/hrsh7th/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/hrsh7th/start/cmp-nvim-lua"]
+	path = pack/hrsh7th/start/cmp-nvim-lua
+	url = https://github.com/hrsh7th/cmp-nvim-lua
+[submodule "pack/saadparwaiz1/start/cmp_luasnip"]
+	path = pack/saadparwaiz1/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "pack/L3MON4D3/start/LuaSnip"]
+	path = pack/L3MON4D3/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "pack/rafamadriz/start/friendly-snippets"]
+	path = pack/rafamadriz/start/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets
+[submodule "pack/ruanyl/start/vim-gh-line"]
+	path = pack/ruanyl/start/vim-gh-line
+	url = https://github.com/ruanyl/vim-gh-line
+[submodule "pack/vim-test/start/vim-test"]
+	path = pack/vim-test/start/vim-test
+	url = https://github.com/vim-test/vim-test
+[submodule "pack/mfussenegger/start/nvim-dap"]
+	path = pack/mfussenegger/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap
+[submodule "pack/glacambre/start/firenvim"]
+	path = pack/glacambre/start/firenvim
+	url = https://github.com/glacambre/firenvim
+[submodule "pack/jose-elias-alvarez/start/null-ls.nvim"]
+	path = pack/jose-elias-alvarez/start/null-ls.nvim
+	url = https://github.com/jose-elias-alvarez/null-ls.nvim
