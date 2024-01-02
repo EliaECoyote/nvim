@@ -194,9 +194,9 @@ function M.setup_theme(colors, status_colors)
     DiffNewFile                   = { fg = status_colors.success_fg, bg = status_colors.success },
     DiffLine                      = { fg = status_colors.warn_fg, bg = status_colors.warn },
     DiffRemoved                   = { fg = status_colors.error_fg, bg = status_colors.error },
-    GitGutterAddLineNr            = { fg = status_colors.success_fg, bg = colors.base01, bold = true },
-    GitGutterChangeLineNr         = { fg = status_colors.warn_fg, bg = colors.base01, bold = true },
-    GitGutterDeleteLineNr         = { fg = status_colors.error_fg, bg = colors.base01, bold = true },
+    GitGutterAddLineNr            = { fg = status_colors.success_fg, bg = status_colors.success, bold = true },
+    GitGutterChangeLineNr         = { fg = status_colors.warn_fg, bg = status_colors.warn, bold = true },
+    GitGutterDeleteLineNr         = { fg = status_colors.error_fg, bg = status_colors.error, bold = true },
     -- Org highlights
     OrgTSHeadlineLevel2           = { fg = colors.base06, bold = true },
     OrgTSHeadlineLevel3           = { fg = colors.base09, bold = true },
