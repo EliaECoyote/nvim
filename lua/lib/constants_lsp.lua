@@ -12,6 +12,7 @@ constants_lsp.LSP_SERVERS = {
   "gopls",
   "cmake",
   "terraformls",
+  "yamlls",
 }
 
 return constants_lsp
