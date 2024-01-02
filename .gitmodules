@@ -88,3 +88,6 @@
 [submodule "pack/jose-elias-alvarez/start/null-ls.nvim"]
 	path = pack/jose-elias-alvarez/start/null-ls.nvim
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
+[submodule "pack/airblade/start/vim-gitgutter"]
+	path = pack/airblade/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter

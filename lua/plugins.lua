@@ -16,26 +16,10 @@ require("config_lsp")
 -- jose-elias-alvarez/null-ls.nvim
 require("config_null_ls")
 
--- lewis6991/gitsigns.nvim
-require("gitsigns").setup({
-  signcolumn      = false,
-  numhl           = true,
-  max_file_length = 1000,
-  on_attach       = function(bufnr)
-    local gs = package.loaded.gitsigns
-    -- Navigation
-    vim.keymap.set('n', ']c', function()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, { buffer = bufnr, expr = true })
-    vim.keymap.set('n', '[c', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, { buffer = bufnr, expr = true })
-  end
-})
+-- airblade/vim-gitgutter
+vim.o.updatetime=100
+vim.g.gitgutter_signs = 0
+vim.g.gitgutter_highlight_linenrs = 1
 
 -- nvim-treesitter/nvim-treesitter
 require("config_treesitter")
