@@ -55,7 +55,10 @@ vim.keymap.set("n", "<leader>fr", fzf.resume)
 vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
 vim.keymap.set("n", "<leader>fw", function()
   local BOOKMARKS_FOLDERS = {
-    "~/.config/nvim/",
+    "~/.config/nvim/lua/",
+    "~/.config/nvim/colors/",
+    "~/.config/nvim/after/",
+    "~/.config/nvim/syntax/",
     "~/.config/karabiner/",
     "~/.config/vifm/",
     "~/.config/doom/",
@@ -63,6 +66,7 @@ vim.keymap.set("n", "<leader>fw", function()
     "~/.github/",
     "~/Library/CloudStorage/Dropbox/",
     "~/dev/playground",
+    "~/dev/notes",
   }
   local BOOKMARKS_FILES = {
     "~/.zshrc",
