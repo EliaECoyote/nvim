@@ -80,6 +80,7 @@ vim.keymap.set("n", "<leader>fw", function()
     "~/.gitignore",
     "~/.tmux.conf",
     "~/.wezterm.lua",
+    "~/.config/nvim/init.lua",
     "~/.config/vifm/vifmrc",
     "~/.config/alacritty.toml",
     "~/.config/lazygit/config.yml",
