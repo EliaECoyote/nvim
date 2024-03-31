@@ -115,6 +115,14 @@ require("config_cmp")
 
 -- vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
+-- Open terminal in normal mode, so it doesn't close on key press.
+vim.g["test#neovim#start_normal"] = 1
+-- When a new test run is requested, abort previous one.
+vim.g["test#neovim_sticky#kill_previous"] = 1
+-- When a new test run is requested, clear screen from previous run.
+vim.g["test#preserve_screen"] = 0
+-- Reopen terminal split if not visible
+vim.g["test#neovim_sticky#reopen_window"] = 1
 vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
 vim.keymap.set("n", "t<C-f>", ":TestFile<cr>")
 vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
