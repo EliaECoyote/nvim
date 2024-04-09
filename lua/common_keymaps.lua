@@ -62,6 +62,17 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
+  "t",
+  "<C-o>",
+  "<C-\\><C-n>",
+  {
+    noremap = true,
+    silent = true,
+    desc = "Exit terminal mode"
+  }
+)
+
+vim.keymap.set(
   { "n", "v" },
   "Y",
   "\"+y",
