@@ -17,7 +17,7 @@ require("config_lsp")
 require("config_null_ls")
 
 -- airblade/vim-gitgutter
-vim.o.updatetime=100
+vim.o.updatetime = 100
 vim.g.gitgutter_signs = 0
 vim.g.gitgutter_highlight_linenrs = 1
 
@@ -123,6 +123,25 @@ vim.g["test#neovim_sticky#kill_previous"] = 1
 vim.g["test#preserve_screen"] = 0
 -- Reopen terminal split if not visible
 vim.g["test#neovim_sticky#reopen_window"] = 1
+
+vim.keymap.set(
+  "n",
+  "t<C-d>",
+  function()
+    local path = vim.fn.expand("%")
+    local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+
+    vim.g["test#go#runner"] = "delve"
+    vim.cmd("TestNearest")
+    vim.g["test#go#runner"] = nil
+
+    vim.fn.chansend(vim.b.terminal_job_id, "b " .. path .. ":" .. curr_line)
+  end,
+  {
+    noremap = true,
+    desc = "Debug nearest go test"
+  }
+)
 vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
 vim.keymap.set("n", "t<C-f>", ":TestFile<cr>")
 vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
