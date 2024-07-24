@@ -25,6 +25,9 @@ vim.opt.signcolumn = "yes:1"
 
 -- Hide netrw banner
 vim.g.netrw_banner = 0
+-- Fix buggy netrw buffers not closing behavior
+-- https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
+vim.g.netrw_fastbrowse = 0
 
 -- Use spaces instead of tabs
 vim.opt.tabstop = 2

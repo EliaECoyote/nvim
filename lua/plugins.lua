@@ -128,18 +128,42 @@ vim.keymap.set(
   "n",
   "t<C-d>",
   function()
-    local path = vim.fn.expand("%")
-    local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-
     vim.g["test#go#runner"] = "delve"
     vim.cmd("TestNearest")
     vim.g["test#go#runner"] = nil
-
-    vim.fn.chansend(vim.b.terminal_job_id, "b " .. path .. ":" .. curr_line)
   end,
   {
     noremap = true,
     desc = "Debug nearest go test"
+  }
+)
+
+vim.keymap.set(
+  "n",
+  "t<C-b>",
+  function()
+    local path = vim.fn.expand("%")
+    local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+
+    local tabpage = vim.api.nvim_get_current_tabpage()
+    local windows = vim.api.nvim_tabpage_list_wins(tabpage)
+
+    for _, win in ipairs(windows) do
+      local buf = vim.api.nvim_win_get_buf(win)
+      if vim.bo[buf].buftype == 'terminal' then
+        local terminal_job_id = vim.b[buf].terminal_job_id
+        if terminal_job_id then
+          vim.fn.chansend(terminal_job_id, "b " .. path .. ":" .. curr_line)
+          return
+        end
+      end
+    end
+
+    print("No terminal found")
+  end,
+  {
+    noremap = true,
+    desc = "Send delve breakpoint command to terminal"
   }
 )
 vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
