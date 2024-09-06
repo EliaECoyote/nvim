@@ -8,6 +8,8 @@ for _, lsp in ipairs(constants_lsp.LSP_SERVERS) do
   local config = utils_lsp.make_default_config()
 
   if lsp == "tsserver" then
+    lsp = "ts_ls"
+
     function config.on_attach(client)
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
