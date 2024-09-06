@@ -23,4 +23,4 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Adopt markdown highlights for mdx files.
-vim.treesitter.language.register("mdx", "markdown")
+-- vim.treesitter.language.register("mdx", "markdown")

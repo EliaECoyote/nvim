@@ -48,7 +48,7 @@ fzf.setup({
   grep = { git_icons = false, file_icons = false },
 })
 vim.keymap.set("n", "<leader>f?", fzf.builtin)
-vim.keymap.set("n", "<leader>p", fzf.files)
+vim.keymap.set("n", "<C-t>", fzf.files, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>\\", fzf.buffers)
 vim.keymap.set("n", "<leader>fo", fzf.oldfiles)
 vim.keymap.set("n", "<leader>fr", fzf.resume)
