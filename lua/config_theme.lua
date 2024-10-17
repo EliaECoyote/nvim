@@ -32,6 +32,9 @@ vim.g.netrw_banner = 0
 -- Fix buggy netrw buffers not closing behavior
 -- https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
 vim.g.netrw_fastbrowse = 0
+-- Fix netrw buffers with empty % register
+-- https://github.com/neovim/neovim/issues/17841#issuecomment-1077604089
+vim.opt.hidden = false
 
 -- Use spaces instead of tabs
 vim.opt.tabstop = 2
