@@ -50,7 +50,7 @@ fzf.setup({
 vim.keymap.set("n", "<leader>f?", fzf.builtin)
 vim.keymap.set("n", "<C-t>", fzf.files, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>\\", fzf.buffers)
-vim.keymap.set("n", "<leader>fo", fzf.oldfiles)
+vim.keymap.set("n", "<leader><C-r>", fzf.oldfiles)
 vim.keymap.set("n", "<leader>fr", fzf.resume)
 vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
 vim.keymap.set("n", "<leader>fw", function()
