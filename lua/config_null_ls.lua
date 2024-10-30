@@ -27,6 +27,7 @@ null_ls.setup({
     }),
     -- null_ls.builtins.diagnostics.pydocstyle,
     null_ls.builtins.formatting.jq,
+    null_ls.builtins.formatting.sqlfluff,
     null_ls.builtins.formatting.deno_fmt.with({
       filetypes = { "markdown" },
     }),
