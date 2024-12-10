@@ -7,8 +7,7 @@ require('lspconfig.ui.windows').default_options.border = "rounded"
 for _, lsp in ipairs(constants_lsp.LSP_SERVERS) do
   local config = utils_lsp.make_default_config()
 
-  if lsp == "tsserver" then
-    lsp = "ts_ls"
+  if lsp == "ts_ls" then
 
     function config.on_attach(client)
       client.server_capabilities.documentFormattingProvider = false
