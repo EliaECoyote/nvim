@@ -91,3 +91,6 @@
 [submodule "pack/airblade/start/vim-gitgutter"]
 	path = pack/airblade/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "pack/nvim-treesitter/start/nvim-treesitter-context"]
+	path = pack/nvim-treesitter/start/nvim-treesitter-context
+	url = https://github.com/nvim-treesitter/nvim-treesitter-context
