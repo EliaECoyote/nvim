@@ -8,9 +8,7 @@ vim.g.nremap = {
 -- neovim/nvim-lspconfig
 local constants_lsp = require("lib.constants_lsp")
 require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = constants_lsp.LSP_SERVERS
-})
+require("mason-lspconfig").setup()
 require("config_lsp")
 
 -- jose-elias-alvarez/null-ls.nvim
