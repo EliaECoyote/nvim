@@ -24,7 +24,12 @@ require("treesitter-context").setup({
   min_window_height = 40,
   multiline_threshold = 1,
   multiwindow = true,
-  trim_scope = 'inner'
+  patterns = {
+    yaml = {
+      "block_mapping_pair",
+      "block_sequence_item",
+    },
+  }
 })
 
 vim.opt.foldmethod = "expr"
