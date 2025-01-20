@@ -170,6 +170,18 @@ vim.keymap.set(
   "<Home>",
   { desc = "Move to start of line." }
 )
+vim.keymap.set(
+  "c",
+  "<M-b>",
+  "<S-Left>",
+  { desc = "Move to prev word" }
+)
+vim.keymap.set(
+  "c",
+  "<M-f>",
+  "<S-Right>",
+  { desc = "Move to next word" }
+)
 
 vim.keymap.set(
   "n",
