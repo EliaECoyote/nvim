@@ -31,9 +31,5 @@ null_ls.setup({
     null_ls.builtins.formatting.black,
     null_ls.builtins.diagnostics.buildifier,
     null_ls.builtins.formatting.buildifier,
-    null_ls.builtins.formatting.shfmt.with({
-      -- `-i 2` sets indentation to 2 spaces.
-      args = { "-filename", "$FILENAME", "-i", "2" }
-    }),
   },
 })
