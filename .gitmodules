@@ -73,9 +73,6 @@
 [submodule "pack/glacambre/start/firenvim"]
 	path = pack/glacambre/start/firenvim
 	url = https://github.com/glacambre/firenvim
-[submodule "pack/jose-elias-alvarez/start/null-ls.nvim"]
-	path = pack/jose-elias-alvarez/start/null-ls.nvim
-	url = https://github.com/jose-elias-alvarez/null-ls.nvim
 [submodule "pack/airblade/start/vim-gitgutter"]
 	path = pack/airblade/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
@@ -91,3 +88,6 @@
 [submodule "pack/MunifTanjim/start/nui.nvim"]
 	path = pack/MunifTanjim/start/nui.nvim
 	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "pack/nvimtools/start/none-ls.nvim"]
+	path = pack/nvimtools/start/none-ls.nvim
+	url = https://github.com/nvimtools/none-ls.nvim

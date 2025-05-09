@@ -2,8 +2,8 @@
 local constants_lsp = require("lib.constants_lsp")
 require("config_lsp")
 
--- jose-elias-alvarez/null-ls.nvim
-require("config_null_ls")
+-- nvimtools/none-ls.nvim
+require("config_none-ls")
 
 -- airblade/vim-gitgutter
 vim.o.updatetime = 100
