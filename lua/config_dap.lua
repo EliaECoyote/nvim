@@ -2,14 +2,14 @@ local constants_path = require("lib.constants_path")
 local dap = require("dap")
 local widgets = require("dap.ui.widgets")
 
-vim.fn.sign_define("DapBreakpoint", { text = "🅱️ ", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "B ", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "", linehl = "", numhl = "" })
 
-dap.adapters.node2 = {
-  type = "executable",
-  command = constants_path.EXECUTABLES .. "/node-debug2-adapter",
-  args = {}
-}
+-- dap.adapters.node2 = {
+--   type = "executable",
+--   command = constants_path.EXECUTABLES .. "/node-debug2-adapter",
+--   args = {}
+-- }
 
 -- vim.keymap.set("n", "<leader>bb", dap.toggle_breakpoint)
 -- vim.keymap.set("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
