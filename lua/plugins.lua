@@ -1,5 +1,3 @@
--- neovim/nvim-lspconfig
-local constants_lsp = require("lib.constants_lsp")
 require("config_lsp")
 
 -- nvimtools/none-ls.nvim
