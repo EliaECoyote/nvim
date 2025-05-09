@@ -25,4 +25,11 @@ vim.filetype.add({
 require("common_keymaps")
 require("config_theme")
 require("config_search_and_replace")
+
+-- See https://github.com/neovim/nvim-lspconfig/tree/master/lsp for configurations
+local constants_lsp = require("lib.constants_lsp")
+for _, lsp in ipairs(constants_lsp.LSP_SERVERS) do
+  vim.lsp.enable(lsp)
+end
+
 require("plugins")

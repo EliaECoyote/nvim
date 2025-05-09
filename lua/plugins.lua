@@ -1,5 +1,3 @@
-require("config_lsp")
-
 -- nvimtools/none-ls.nvim
 require("config_none-ls")
 
