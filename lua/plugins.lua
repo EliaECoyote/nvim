@@ -1,10 +1,3 @@
--- tpope/vim-unimpaired
-vim.g.nremap = {
-  ["yo<Esc>"] = "<nop>",
-  ["yo"] = "<nop>",
-  [">p"] = "<nop>"
-}
-
 -- neovim/nvim-lspconfig
 local constants_lsp = require("lib.constants_lsp")
 require("mason").setup()
@@ -185,6 +178,20 @@ require("config_dap")
 
 -- yetone/avante.nvim
 require("avante").setup({
+  --highlights = {
+  --  ---@type AvanteConflictHighlights
+  --  diff = {
+  --    current = "DiffText",
+  --    incoming = "DiffAdd",
+  --  },
+  --  conflicts = {
+  --    current = "DiffText",
+  --    incoming = "DiffAdd",
+  --  },
+  --},
+})
+
+
 -- glacambre/firenvim
 -- To build, run: vim.fn["firenvim#install"](0)
 vim.g.firenvim_config = {
