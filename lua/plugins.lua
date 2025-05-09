@@ -1,7 +1,5 @@
 -- neovim/nvim-lspconfig
 local constants_lsp = require("lib.constants_lsp")
-require("mason").setup()
-require("mason-lspconfig").setup()
 require("config_lsp")
 
 -- jose-elias-alvarez/null-ls.nvim

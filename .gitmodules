@@ -16,12 +16,6 @@
 [submodule "pack/neovim/start/nvim-lspconfig"]
 	path = pack/neovim/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
-[submodule "pack/williamboman/start/mason.nvim"]
-	path = pack/williamboman/start/mason.nvim
-	url = https://github.com/williamboman/mason.nvim
-[submodule "pack/williamboman/start/mason-lspconfig.nvim"]
-	path = pack/williamboman/start/mason-lspconfig.nvim
-	url = https://github.com/williamboman/mason-lspconfig.nvim
 [submodule "pack/nvim-lua/start/plenary.nvim"]
 	path = pack/nvim-lua/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim
