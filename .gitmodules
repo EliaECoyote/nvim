@@ -13,9 +13,6 @@
 [submodule "pack/tpope/start/vim-vinegar"]
 	path = pack/tpope/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-[submodule "pack/neovim/start/nvim-lspconfig"]
-	path = pack/neovim/start/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig
 [submodule "pack/nvim-lua/start/plenary.nvim"]
 	path = pack/nvim-lua/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim
