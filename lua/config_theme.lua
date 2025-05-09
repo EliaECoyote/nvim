@@ -84,10 +84,6 @@ vim.g.markdown_fenced_languages = {
   "javascript",
 }
 
--- For LSP-related UI customzations, see
--- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-vim.diagnostic.config({ virtual_text = false })
-
 function _G.custom_status_line()
   local file_name = "%-.16t"
   local modified = "%-m"
