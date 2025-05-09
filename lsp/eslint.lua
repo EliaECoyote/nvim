@@ -29,7 +29,7 @@
 --- Additional messages you can handle: `eslint/noConfig`
 
 -- Copied from https://github.com/neovim/nvim-lspconfig/blob/79c12bc6e789dc3774a55289cc8fdedbd3b8ca38/lua/lspconfig/util.lua#L61
-function insert_package_json(config_files, field, fname)
+local function insert_package_json(config_files, field, fname)
   local path = vim.fn.fnamemodify(fname, ':h')
   local root_with_package = vim.fs.find(
     { 'package.json', 'package.json5' },
@@ -97,7 +97,7 @@ return {
     }
 
     local fname = vim.api.nvim_buf_get_name(bufnr)
-    root_file_patterns = util.insert_package_json(root_file_patterns, 'eslintConfig', fname)
+    root_file_patterns = insert_package_json(root_file_patterns, 'eslintConfig', fname)
     on_dir(vim.fs.dirname(vim.fs.find(root_file_patterns, { path = fname, upward = true })[1]))
   end,
   -- Refer to https://github.com/Microsoft/vscode-eslint#settings-options for documentation.
@@ -198,4 +198,3 @@ return {
     end,
   },
 }
-
