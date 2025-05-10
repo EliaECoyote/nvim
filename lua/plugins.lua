@@ -93,7 +93,7 @@ fzf.register_ui_select(function(_, items)
   end
   return { winopts = { height = h, width = 0.60, row = 0.40 } }
 end)
-vim.keymap.set("n", "gr", fzf.lsp_references)
+vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
 
 -- Autocompletion engine / sources / snippets.
