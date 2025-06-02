@@ -13,8 +13,6 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.go.background = "light"
 vim.cmd.colorscheme("vim")
 vim.cmd.colorscheme("coyote")
-vim.cmd([[highlight Normal ctermbg=none guibg=none]])
-vim.cmd([[highlight NonText ctermbg=none guibg=none]])
 -- vim.cmd.colorscheme("default")
 
 -- Global statusline
