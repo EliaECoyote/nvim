@@ -185,11 +185,12 @@ function M.setup_theme(colors, status_colors)
     CmpItemKindConstant           = { link = "@constant" },
     CmpItemKindOperator           = { link = "@operator" },
     CmpItemKindTypeParameter      = { link = "@type" },
+    -- Diff highlights
     DiffAdd                       = { bg = status_colors.success },
     DiffDelete                    = { bg = status_colors.error },
     DiffChange                    = { bg = status_colors.warn },
     DiffText                      = { bg = status_colors.warn, bold = true },
-    DiffAdded                     = { bg = status_colors.success },
+    DiffAdded                     = { link = "DiffAdd" },
     DiffFile                      = { fg = status_colors.warn_fg, bg = status_colors.warn },
     DiffNewFile                   = { fg = status_colors.success_fg, bg = status_colors.success },
     DiffLine                      = { fg = status_colors.warn_fg, bg = status_colors.warn },
