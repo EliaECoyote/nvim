@@ -13,6 +13,9 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.go.background = "light"
 vim.cmd.colorscheme("default_tweaked")
 
+-- Winborder style
+vim.o.winborder = "solid"
+
 -- Global statusline
 vim.opt.laststatus = 3
 
