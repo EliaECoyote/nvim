@@ -79,9 +79,6 @@
 [submodule "pack/nvim-treesitter/start/nvim-treesitter-context"]
 	path = pack/nvim-treesitter/start/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context
-[submodule "pack/karb94/start/neoscroll.nvim"]
-	path = pack/karb94/start/neoscroll.nvim
-	url = https://github.com/karb94/neoscroll.nvim
 [submodule "pack/MunifTanjim/start/nui.nvim"]
 	path = pack/MunifTanjim/start/nui.nvim
 	url = https://github.com/MunifTanjim/nui.nvim

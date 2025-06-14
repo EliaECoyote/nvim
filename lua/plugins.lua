@@ -99,17 +99,6 @@ vim.keymap.set("n", "gd", fzf.lsp_definitions)
 -- Autocompletion engine / sources / snippets.
 require("config_cmp")
 
--- Smooth scroll
-require('neoscroll').setup({
-  duration_multiplier = 0.2,
-  -- Keys to be mapped to their corresponding default scrolling animation
-  mappings = {
-    '<C-d>',
-    '<C-u>',
-    'zz',
-  },
-})
-
 -- vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
 -- Open terminal in normal mode, so it doesn't close on key press.
