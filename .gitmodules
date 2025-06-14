@@ -82,9 +82,6 @@
 [submodule "pack/karb94/start/neoscroll.nvim"]
 	path = pack/karb94/start/neoscroll.nvim
 	url = https://github.com/karb94/neoscroll.nvim
-[submodule "pack/yetone/start/avante.nvim"]
-	path = pack/yetone/start/avante.nvim
-	url = https://github.com/yetone/avante.nvim
 [submodule "pack/MunifTanjim/start/nui.nvim"]
 	path = pack/MunifTanjim/start/nui.nvim
 	url = https://github.com/MunifTanjim/nui.nvim

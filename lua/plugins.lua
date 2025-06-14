@@ -170,22 +170,6 @@ vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
 -- mfussenegger/nvim-dap
 require("config_dap")
 
--- yetone/avante.nvim
-require("avante").setup({
-  --highlights = {
-  --  ---@type AvanteConflictHighlights
-  --  diff = {
-  --    current = "DiffText",
-  --    incoming = "DiffAdd",
-  --  },
-  --  conflicts = {
-  --    current = "DiffText",
-  --    incoming = "DiffAdd",
-  --  },
-  --},
-})
-
-
 -- glacambre/firenvim
 -- To build, run: vim.fn["firenvim#install"](0)
 vim.g.firenvim_config = {
