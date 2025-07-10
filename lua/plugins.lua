@@ -12,6 +12,9 @@ require("config_treesitter")
 -- j-hui/fidget.nvim
 require("fidget").setup({})
 
+-- vim-copilot
+vim.g.copilot_enabled = false
+
 -- ibhagwan/fzf-lua
 local fzf = require("fzf-lua")
 fzf.setup({
