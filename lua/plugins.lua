@@ -96,7 +96,7 @@ end)
 vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
 
--- Autocompletion engine / sources / snippets.
+-- Autocompletion engine / sources.
 require("config_cmp")
 
 -- vim-test/vim-test

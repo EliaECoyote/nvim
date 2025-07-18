@@ -1,7 +1,4 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
-
-require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = { "menu,menuone,noselect" }
 
@@ -35,11 +32,6 @@ local kind_icons = {
 
 cmp.setup({
   preselect = cmp.PreselectMode.Item,
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
   mapping = {
     ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
@@ -60,7 +52,6 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "buffer" },
-    { name = "luasnip" },
     { name = "path" },
     { name = "orgmode" },
   }),

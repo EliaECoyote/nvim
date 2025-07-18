@@ -49,15 +49,6 @@
 [submodule "pack/hrsh7th/start/cmp-nvim-lua"]
 	path = pack/hrsh7th/start/cmp-nvim-lua
 	url = https://github.com/hrsh7th/cmp-nvim-lua
-[submodule "pack/saadparwaiz1/start/cmp_luasnip"]
-	path = pack/saadparwaiz1/start/cmp_luasnip
-	url = https://github.com/saadparwaiz1/cmp_luasnip
-[submodule "pack/L3MON4D3/start/LuaSnip"]
-	path = pack/L3MON4D3/start/LuaSnip
-	url = https://github.com/L3MON4D3/LuaSnip
-[submodule "pack/rafamadriz/start/friendly-snippets"]
-	path = pack/rafamadriz/start/friendly-snippets
-	url = https://github.com/rafamadriz/friendly-snippets
 [submodule "pack/ruanyl/start/vim-gh-line"]
 	path = pack/ruanyl/start/vim-gh-line
 	url = https://github.com/ruanyl/vim-gh-line
