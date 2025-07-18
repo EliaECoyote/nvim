@@ -7,9 +7,6 @@
 [submodule "pack/tpope/start/vim-fugitive"]
 	path = pack/tpope/start/vim-fugitive
 	url = https://tpope.io/vim/fugitive.git
-[submodule "pack/github/start/copilot.vim"]
-	path = pack/github/start/copilot.vim
-	url = https://github.com/github/copilot.vim.git
 [submodule "pack/tpope/start/vim-vinegar"]
 	path = pack/tpope/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
