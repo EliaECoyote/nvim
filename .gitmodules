@@ -67,9 +67,6 @@
 [submodule "pack/nvim-treesitter/start/nvim-treesitter-context"]
 	path = pack/nvim-treesitter/start/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context
-[submodule "pack/MunifTanjim/start/nui.nvim"]
-	path = pack/MunifTanjim/start/nui.nvim
-	url = https://github.com/MunifTanjim/nui.nvim
 [submodule "pack/nvimtools/start/none-ls.nvim"]
 	path = pack/nvimtools/start/none-ls.nvim
 	url = https://github.com/nvimtools/none-ls.nvim
