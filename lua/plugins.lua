@@ -29,16 +29,28 @@ fzf.setup({
     -- cf. https://github.com/ibhagwan/fzf-lua/wiki#custom-history
     ['--history'] = vim.fn.stdpath("data") .. "/fzf-lua-history",
   },
-  files = { git_icons = false, file_icons = true },
+  global = { git_icons = false, file_icons = true },
   grep = { git_icons = false, file_icons = true },
   oldfiles = { cwd_only = true, include_current_session = true },
 })
+
+fzf.register_ui_select(function(_, items)
+  local min_h, max_h = 0.15, 0.70
+  local h = (#items + 4) / vim.o.lines
+  if h < min_h then
+    h = min_h
+  elseif h > max_h then
+    h = max_h
+  end
+  return { winopts = { height = h, width = 0.60, row = 0.40 } }
+end)
+
 vim.keymap.set("n", "<leader>f?", fzf.builtin)
-vim.keymap.set("n", "<C-t>", fzf.files, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-t>", fzf.global)
 vim.keymap.set("n", "<leader>\\", fzf.buffers)
 vim.keymap.set("n", "<leader><C-r>", fzf.oldfiles)
 vim.keymap.set("n", "<leader>fr", fzf.resume)
-vim.keymap.set("n", "<leader>ff", fzf.live_grep_glob)
+vim.keymap.set("n", "<leader>ff", fzf.live_grep)
 vim.keymap.set("n", "<leader>fw", function()
   local BOOKMARKS_FOLDERS = {
     "~/.config/nvim/lua/",
@@ -83,18 +95,9 @@ vim.keymap.set("n", "<leader>fw", function()
         .. "'"
   })
 end)
-fzf.register_ui_select(function(_, items)
-  local min_h, max_h = 0.15, 0.70
-  local h = (#items + 4) / vim.o.lines
-  if h < min_h then
-    h = min_h
-  elseif h > max_h then
-    h = max_h
-  end
-  return { winopts = { height = h, width = 0.60, row = 0.40 } }
-end)
 vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
+vim.keymap.set("n", "gra", fzf.lsp_code_actions)
 
 -- Autocompletion engine / sources.
 require("config_cmp")
