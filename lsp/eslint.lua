@@ -50,7 +50,8 @@ end
 local lsp = vim.lsp
 
 return {
-  cmd = { 'vscode-eslint-language-server', '--stdio' },
+  -- cmd = { 'vscode-eslint-language-server', '--stdio' },
+  cmd = { "yarn", "exec", "vscode-eslint-language-server", "--stdio" },
   filetypes = {
     'javascript',
     'javascriptreact',
