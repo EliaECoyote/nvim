@@ -41,59 +41,37 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n",
-    "<leader>pm",
-    function()
-      local function save_clipboard_image()
-        local temp_path = "/tmp/img.png"
-        local result = os.execute("pngpaste " .. temp_path .. " > /dev/null 2>&1")
-        if result ~= 0 then return nil end
-        return temp_path
-        end
-
-      local clip_path = save_clipboard_image()
-      if not clip_path or vim.fn.filereadable(clip_path) ~= 1 then
-          vim.notify("❌ No image in clipboard (pngpaste failed)", vim.log.levels.ERROR)
-        if clip_path then
-            vim.fn.delete(clip_path, "rf")
-        end
-        return
-        end
-
-      local buf_path = vim.fn.expand("%:p")
-      local base_dir = vim.fn.fnamemodify(buf_path, ":h")
-      local media_dir = base_dir .. "/media"
-      vim.fn.mkdir(media_dir, "p")
-
-      local filename = os.date("clip-%Y%m%d-%H%M%S") .. ".png"
-      local target_path = media_dir .. "/" .. filename
-      vim.fn.rename(clip_path, target_path)
-
-      vim.api.nvim_put({ "media/" .. filename }, "c", true, true)
-      vim.notify("✅ Pasted: " .. "media/" .. filename, vim.log.levels.INFO)
-    end
-)
-
-vim.keymap.set(
   "n",
-  "<C-s>",
-  "\"_diwP",
-  {
-    noremap = true,
-    silent = true,
-    desc = "Stamp (Del & replace with yanked text)"
-  }
-)
+  "<leader>pm",
+  function()
+    local function save_clipboard_image()
+      local temp_path = "/tmp/img.png"
+      local result = os.execute("pngpaste " .. temp_path .. " > /dev/null 2>&1")
+      if result ~= 0 then return nil end
+      return temp_path
+    end
 
-vim.keymap.set(
-  "t",
-  "<C-o>",
-  "<C-\\><C-n>",
-  {
-    noremap = true,
-    silent = true,
-    desc = "Exit terminal mode"
-  }
+    local clip_path = save_clipboard_image()
+    if not clip_path or vim.fn.filereadable(clip_path) ~= 1 then
+      vim.notify("❌ No image in clipboard (pngpaste failed)", vim.log.levels.ERROR)
+      if clip_path then
+        vim.fn.delete(clip_path, "rf")
+      end
+      return
+    end
+
+    local buf_path = vim.fn.expand("%:p")
+    local base_dir = vim.fn.fnamemodify(buf_path, ":h")
+    local media_dir = base_dir .. "/media"
+    vim.fn.mkdir(media_dir, "p")
+
+    local filename = os.date("clip-%Y%m%d-%H%M%S") .. ".png"
+    local target_path = media_dir .. "/" .. filename
+    vim.fn.rename(clip_path, target_path)
+
+    vim.api.nvim_put({ "media/" .. filename }, "c", true, true)
+    vim.notify("✅ Pasted: " .. "media/" .. filename, vim.log.levels.INFO)
+  end
 )
 
 vim.keymap.set(
