@@ -22,7 +22,7 @@ vim.filetype.add({
   extension = { mdx = "mdx" }
 })
 
-require("common_keymaps")
+require("config_keymaps")
 require("config_theme")
 require("config_search_and_replace")
 

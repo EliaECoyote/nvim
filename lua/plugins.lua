@@ -1,18 +1,63 @@
--- nvimtools/none-ls.nvim
-require("config_none-ls")
+-- https://github.com/nvimtools/none-ls.nvim
+local null_ls = require("null-ls")
 
--- airblade/vim-gitgutter
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.sqlfluff,
+    null_ls.builtins.formatting.terraform_fmt,
+    null_ls.builtins.diagnostics.buildifier,
+    null_ls.builtins.formatting.buildifier,
+  },
+})
+
+-- https://github.com/airblade/vim-gitgutter
 vim.o.updatetime = 100
 vim.g.gitgutter_signs = 0
 vim.g.gitgutter_highlight_linenrs = 1
 
--- nvim-treesitter/nvim-treesitter
-require("config_treesitter")
+-- https://github.com/nvim-treesitter/nvim-treesitter
+local tresitter_configs = require("nvim-treesitter.configs")
 
--- j-hui/fidget.nvim
+tresitter_configs.setup({
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = function(_, bufnr)
+      return vim.api.nvim_buf_line_count(bufnr) > 5000
+    end,
+    -- Required for spellcheck, some LaTex highlights and
+    -- code block highlights that do not have ts grammar
+    additional_vim_regex_highlighting = { "org" },
+  },
+  indent = {
+    enable = true,
+    -- Waiting for better treesitter indents for python:
+    -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1136
+    disable = { "python" },
+  },
+})
+
+require("treesitter-context").setup({
+  max_lines = 3,
+  min_window_height = 40,
+  multiline_threshold = 1,
+  multiwindow = true,
+  patterns = {
+    yaml = {
+      "block_mapping_pair",
+      "block_sequence_item",
+    },
+  }
+})
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- https://github.com/j-hui/fidget.nvim
 require("fidget").setup({})
 
--- ibhagwan/fzf-lua
+-- https://github.com/ibhagwan/fzf-lua
 local fzf = require("fzf-lua")
 fzf.setup({
   winopts = {
@@ -99,10 +144,78 @@ vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
 vim.keymap.set("n", "gra", fzf.lsp_code_actions)
 
--- Autocompletion engine / sources.
-require("config_cmp")
+-- https://github.com/hrsh7th/nvim-cmp
+local cmp = require("cmp")
 
--- vim-test/vim-test
+vim.opt.completeopt = { "menu,menuone,noselect" }
+
+local kind_icons = {
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
+}
+
+cmp.setup({
+  preselect = cmp.PreselectMode.Item,
+  mapping = {
+    ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+  },
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(_, vim_item)
+      vim_item.kind = kind_icons[vim_item.kind]
+      return vim_item
+    end,
+  },
+  -- Note: The order matches the cmp menu's sort order.
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "orgmode" },
+  }),
+  experimental = {
+    ghost_text = false,
+  },
+})
+
+cmp.setup.filetype("gitcommit", {
+  -- Note: The order matches the cmp menu's sort order.
+  sources = cmp.config.sources({
+    { name = "cmp_git" },
+    { name = "buffer" },
+  })
+})
+
+-- https://github.com/vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
 -- Open terminal in normal mode, so it doesn't close on key press.
 vim.g["test#neovim#start_normal"] = 1
@@ -159,10 +272,8 @@ vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
 vim.keymap.set("n", "t<C-f>", ":TestFile<cr>")
 vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
 
--- mfussenegger/nvim-dap
-require("config_dap")
-
--- glacambre/firenvim
+-- https://github.com/glacambre/firenvim
+--
 -- To build, run: vim.fn["firenvim#install"](0)
 vim.g.firenvim_config = {
   globalSettings = { alt = "all" },
