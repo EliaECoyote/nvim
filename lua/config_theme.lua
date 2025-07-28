@@ -60,7 +60,6 @@ vim.opt.diffopt:append("vertical")
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.updatetime = 750
 
 -- Disable redundant messages from ins-completion-menu
 vim.opt.shortmess:append("c")
