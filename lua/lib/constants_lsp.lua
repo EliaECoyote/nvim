@@ -1,7 +1,7 @@
 local constants_lsp = {}
 
 constants_lsp.LSP_SERVERS = {
-  "ts_ls",
+  "vtsls",
   "html",
   "cssls",
   "pyright",
