@@ -31,24 +31,6 @@
 [submodule "pack/nvim-tree/start/nvim-web-devicons"]
 	path = pack/nvim-tree/start/nvim-web-devicons
 	url = https://github.com/nvim-tree/nvim-web-devicons
-[submodule "pack/hrsh7th/start/nvim-cmp"]
-	path = pack/hrsh7th/start/nvim-cmp
-	url = https://github.com/hrsh7th/nvim-cmp
-[submodule "pack/hrsh7th/start/cmp-buffer"]
-	path = pack/hrsh7th/start/cmp-buffer
-	url = https://github.com/hrsh7th/cmp-buffer
-[submodule "pack/hrsh7th/start/cmp-path"]
-	path = pack/hrsh7th/start/cmp-path
-	url = https://github.com/hrsh7th/cmp-path
-[submodule "pack/hrsh7th/start/cmp-cmdline"]
-	path = pack/hrsh7th/start/cmp-cmdline
-	url = https://github.com/hrsh7th/cmp-cmdline
-[submodule "pack/hrsh7th/start/cmp-nvim-lsp"]
-	path = pack/hrsh7th/start/cmp-nvim-lsp
-	url = https://github.com/hrsh7th/cmp-nvim-lsp
-[submodule "pack/hrsh7th/start/cmp-nvim-lua"]
-	path = pack/hrsh7th/start/cmp-nvim-lua
-	url = https://github.com/hrsh7th/cmp-nvim-lua
 [submodule "pack/ruanyl/start/vim-gh-line"]
 	path = pack/ruanyl/start/vim-gh-line
 	url = https://github.com/ruanyl/vim-gh-line
