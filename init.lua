@@ -23,6 +23,8 @@ vim.filetype.add({
 vim.o.completeopt = "menu,menuone,noinsert,popup,fuzzy"
 vim.o.cia = "kind,abbr,menu"
 
+vim.o.updatetime = 200
+
 require("config_keymaps")
 require("config_theme")
 require("config_search_and_replace")

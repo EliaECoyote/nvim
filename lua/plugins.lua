@@ -32,7 +32,6 @@ blink.setup({
 vim.keymap.set("i", "<C-x><C-o>", blink.show)
 
 -- https://github.com/airblade/vim-gitgutter
-vim.o.updatetime = 100
 vim.g.gitgutter_signs = 0
 vim.g.gitgutter_highlight_linenrs = 1
 
