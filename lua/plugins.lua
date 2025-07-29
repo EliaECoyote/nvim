@@ -11,6 +11,26 @@ null_ls.setup({
   },
 })
 
+-- https://github.com/saghen/blink.cmp
+local blink = require("blink.cmp")
+blink.setup({
+  fuzzy = {
+    implementation = "prefer_rust",
+    prebuilt_binaries = { force_version = "v1.6.0" }
+  },
+  keymap = {
+    preset = "default",
+    ["<C-space>"] = false,
+  },
+  completion = {
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 1500,
+    }
+  }
+})
+vim.keymap.set("i", "<C-x><C-o>", blink.show)
+
 -- https://github.com/airblade/vim-gitgutter
 vim.o.updatetime = 100
 vim.g.gitgutter_signs = 0
