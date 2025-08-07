@@ -13,6 +13,7 @@ null_ls.setup({
 
 -- https://github.com/saghen/blink.cmp
 local blink = require("blink.cmp")
+-- Refer to https://cmp.saghen.dev/configuration/reference.html for defaults.
 blink.setup({
   fuzzy = {
     implementation = "prefer_rust",
@@ -26,8 +27,14 @@ blink.setup({
     documentation = {
       auto_show = true,
       auto_show_delay_ms = 1500,
-    }
-  }
+    },
+  },
+  cmdline = {
+    keymap = {
+      ["<C-e>"] = false
+    },
+    sources = { "buffer" },
+  },
 })
 vim.keymap.set("i", "<C-x><C-o>", blink.show)
 
