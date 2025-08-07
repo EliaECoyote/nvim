@@ -4,7 +4,7 @@ constants_lsp.LSP_SERVERS = {
   "vtsls",
   "html",
   "cssls",
-  "pyright",
+  "basedpyright",
   "ruff",
   "eslint",
   "lua_ls",
