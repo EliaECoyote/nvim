@@ -3,10 +3,10 @@ vim.o.undofile = true
 
 -- Refresh file every time you access the buffer.
 -- This is useful to sync buffer when it has changed on disk.
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
   callback = function()
-    -- To ignore cmd line buffers
-    if vim.bo.buftype == "" then
+    -- To ignore cmd line / popover buffers
+    if vim.bo.buftype ~= "nofile" then
       vim.cmd.checktime()
     end
   end,
