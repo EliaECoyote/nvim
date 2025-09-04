@@ -67,7 +67,7 @@ vim.opt.guicursor = ""
 
 -- Highlights end-of-line
 vim.opt.list = true
-vim.opt.listchars = { tab = "▶ ", trail = "•", precedes = "<", extends = ">" }
+vim.opt.listchars = { tab = "· ", trail = "·", precedes = "<", extends = ">" }
 
 vim.g.markdown_fenced_languages = {
   "html",
@@ -83,6 +83,7 @@ function _G.custom_status_line()
   local modified = "%-m"
   local file_type = "%y"
   local space_middle = "%="
+  local row_col = "[%l:%c]"
 
   local counts = { 0, 0, 0, 0 }
   for _, diagnostic in ipairs(vim.diagnostic.get(0)) do
@@ -105,11 +106,12 @@ function _G.custom_status_line()
   end
 
   return string.format(
-    "%s %s %s %%#StatusLine# %s %s",
+    "%s %s %s %%#StatusLine# %s %s %s",
     file_name,
     modified,
     lsp_segment,
     space_middle,
+    row_col,
     file_type
   )
 end
