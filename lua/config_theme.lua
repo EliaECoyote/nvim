@@ -87,7 +87,6 @@ function _G.custom_status_line()
   local modified = "%-m"
   local file_type = "%y"
   local space_middle = "%="
-  local col_row = "[%c:%l]"
 
   local counts = { 0, 0, 0, 0 }
   for _, diagnostic in ipairs(vim.diagnostic.get(0)) do
@@ -115,8 +114,7 @@ function _G.custom_status_line()
     modified,
     lsp_segment,
     space_middle,
-    file_type,
-    col_row
+    file_type
   )
 end
 
