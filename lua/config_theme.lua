@@ -109,7 +109,7 @@ function _G.custom_status_line()
   end
 
   return string.format(
-    "%s %s %s %%#StatusLine# %s %s %s",
+    "%s %s %s %%#StatusLine# %s %s",
     file_name,
     modified,
     lsp_segment,
