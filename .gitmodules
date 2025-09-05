@@ -1,9 +1,6 @@
 [submodule "pack/tpope/start/vim-commentary"]
 	path = pack/tpope/start/vim-commentary
 	url = https://tpope.io/vim/commentary.git
-[submodule "pack/tpope/start/vim-sleuth"]
-	path = pack/tpope/start/vim-sleuth
-	url = https://tpope.io/vim/sleuth.git
 [submodule "pack/tpope/start/vim-fugitive"]
 	path = pack/tpope/start/vim-fugitive
 	url = https://tpope.io/vim/fugitive.git
