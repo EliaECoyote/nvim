@@ -30,10 +30,7 @@ blink.setup({
     },
   },
   cmdline = {
-    keymap = {
-      ["<C-e>"] = false
-    },
-    sources = { "buffer" },
+    enabled = false,
   },
 })
 vim.keymap.set("i", "<C-x><C-o>", blink.show)
