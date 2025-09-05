@@ -183,7 +183,7 @@ vim.g["test#neovim_sticky#reopen_window"] = 1
 
 vim.keymap.set(
   "n",
-  "t<C-d>",
+  "<leader>td",
   function()
     vim.g["test#go#runner"] = "delve"
     vim.cmd("TestNearest")
@@ -197,7 +197,7 @@ vim.keymap.set(
 
 vim.keymap.set(
   "n",
-  "t<C-b>",
+  "<leader>tb",
   function()
     local path = vim.fn.expand("%")
     local curr_line = vim.api.nvim_win_get_cursor(0)[1]
@@ -223,9 +223,9 @@ vim.keymap.set(
     desc = "Send delve breakpoint command to terminal"
   }
 )
-vim.keymap.set("n", "t<C-n>", ":TestNearest<cr>")
-vim.keymap.set("n", "t<C-f>", ":TestFile<cr>")
-vim.keymap.set("n", "t<C-l>", ":TestLast<cr>")
+vim.keymap.set("n", "<leader>tt", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>T", ":TestFile<cr>")
+vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
 
 -- https://github.com/glacambre/firenvim
 --
