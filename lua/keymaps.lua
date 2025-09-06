@@ -241,75 +241,55 @@ vim.keymap.set(
 
 vim.keymap.set("n", "-", vim.cmd.Ex)
 
-local function cmd_line_with_file()
-  local file_path = vim.fn.fnamemodify(vim.fn.getline("."), ":p")
-  vim.fn.feedkeys(":" ..
-    file_path ..
-    vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
-    " " ..
-    vim.api.nvim_replace_termcodes("<Left>", true, false, true))
-end
-
-local function cmd_line_with_files()
-  local paths = {}
-  local start_line = vim.fn.line("v")
-  local end_line = vim.fn.line(".")
-
-  -- Ensure start_line <= end_line
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
-
-  for i = start_line, end_line do
-    local line = vim.fn.getline(i)
-    if line ~= "" and not line:match("^%.%.$") and not line:match("^%.$") then
-      table.insert(paths, vim.fn.fnamemodify(line, ":p"))
-    end
-  end
-
-  if #paths > 0 then
-    local path_string = table.concat(paths, " ")
-    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true) ..
-      ":" ..
-      path_string ..
-      vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
-      " " ..
-      vim.api.nvim_replace_termcodes("<Left>", true, false, true))
-  end
-end
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
     vim.keymap.set(
       "n",
-      ".",
-      cmd_line_with_file,
-      { buffer = true, desc = "Open cmd line with file path" }
-    )
-    vim.keymap.set(
-      "n",
       "!",
       function()
-        cmd_line_with_file()
-        vim.fn.feedkeys("!")
+        local file_path = vim.fn.fnamemodify(vim.fn.getline("."), ":p")
+        vim.fn.feedkeys(":" ..
+          file_path ..
+          vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
+          " " ..
+          vim.api.nvim_replace_termcodes("<Left>", true, false, true) ..
+          "!"
+        )
       end,
-      { buffer = true, desc = "Run cmd with file path" }
-    )
-    vim.keymap.set(
-      "v",
-      ".",
-      cmd_line_with_files,
-      { buffer = true, desc = "Open cmd line with multiple file paths" }
+      { buffer = true, desc = "Run cmd with file path." }
     )
     vim.keymap.set(
       "v",
       "!",
       function()
-        cmd_line_with_files()
-        vim.fn.feedkeys("!")
+        local paths = {}
+        local start_line = vim.fn.line("v")
+        local end_line = vim.fn.line(".")
+
+        if start_line > end_line then
+          start_line, end_line = end_line, start_line
+        end
+
+        for i = start_line, end_line do
+          local line = vim.fn.getline(i)
+          if line ~= "" and not line:match("^%.%.$") and not line:match("^%.$") then
+            table.insert(paths, vim.fn.fnamemodify(line, ":p"))
+          end
+        end
+
+        if #paths > 0 then
+          local path_string = table.concat(paths, " ")
+          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true) ..
+            ":" ..
+            path_string ..
+            vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
+            " " ..
+            vim.api.nvim_replace_termcodes("<Left>", true, false, true) ..
+            "!")
+        end
       end,
-      { buffer = true, desc = "Run cmd with multiple file paths" }
+      { buffer = true, desc = "Run cmd with multiple file paths." }
     )
   end,
 })
