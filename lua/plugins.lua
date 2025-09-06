@@ -40,9 +40,9 @@ vim.g.gitgutter_signs = 0
 vim.g.gitgutter_highlight_linenrs = 1
 
 -- https://github.com/nvim-treesitter/nvim-treesitter
-local tresitter_configs = require("nvim-treesitter.configs")
+local treesitter_configs = require("nvim-treesitter.configs")
 
-tresitter_configs.setup({
+treesitter_configs.setup({
   auto_install = true,
   highlight = {
     enable = true,
@@ -98,7 +98,7 @@ fzf.setup({
     ['--history'] = vim.fn.stdpath("data") .. "/fzf-lua-history",
   },
   global = { git_icons = false, file_icons = true },
-  grep = { git_icons = false, file_icons = true },
+  grep = { file_icons = true },
   oldfiles = { cwd_only = true, include_current_session = true },
 })
 
@@ -178,6 +178,9 @@ vim.g["test#preserve_screen"] = 0
 -- Reopen terminal split if not visible
 vim.g["test#neovim_sticky#reopen_window"] = 1
 
+vim.keymap.set("n", "<leader>tr", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
+vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
 vim.keymap.set(
   "n",
   "<leader>td",
@@ -191,7 +194,6 @@ vim.keymap.set(
     desc = "Debug nearest go test"
   }
 )
-
 vim.keymap.set(
   "n",
   "<leader>tb",
@@ -207,7 +209,7 @@ vim.keymap.set(
       if vim.bo[buf].buftype == 'terminal' then
         local terminal_job_id = vim.b[buf].terminal_job_id
         if terminal_job_id then
-          vim.fn.chansend(terminal_job_id, "b " .. path .. ":" .. curr_line)
+          vim.fn.chansend(terminal_job_id, "b " .. path .. ":" .. curr_line .. "\n")
           return
         end
       end
@@ -220,9 +222,6 @@ vim.keymap.set(
     desc = "Send delve breakpoint command to terminal"
   }
 )
-vim.keymap.set("n", "<leader>tt", ":TestNearest<cr>")
-vim.keymap.set("n", "<leader>T", ":TestFile<cr>")
-vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
 
 -- https://github.com/glacambre/firenvim
 --
