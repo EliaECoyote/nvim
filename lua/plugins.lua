@@ -61,19 +61,6 @@ treesitter_configs.setup({
   },
 })
 
-require("treesitter-context").setup({
-  max_lines = 3,
-  min_window_height = 40,
-  multiline_threshold = 1,
-  multiwindow = true,
-  patterns = {
-    yaml = {
-      "block_mapping_pair",
-      "block_sequence_item",
-    },
-  }
-})
-
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
