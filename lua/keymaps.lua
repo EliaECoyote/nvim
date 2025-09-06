@@ -1,26 +1,5 @@
 local utils_buffer = require("lib.utils_buffer")
 
-vim.keymap.set("n", "-", vim.cmd.Ex)
-
-vim.keymap.set(
-  "",
-  "<ScrollWheelUp>",
-  "<C-Y>",
-  {
-    silent = true,
-    desc = "Smooth mouse wheel scroll."
-  }
-)
-vim.keymap.set(
-  "",
-  "<ScrollWheelDown>",
-  "<C-E>",
-  {
-    silent = true,
-    desc = "Smooth mouse wheel scroll."
-  }
-)
-
 -- Tabs mappings
 vim.keymap.set(
   "n",
@@ -39,6 +18,44 @@ vim.keymap.set(
   {
     silent = true,
     desc = "Tab close."
+  }
+)
+
+vim.keymap.set(
+  "n",
+  "<leader>s",
+  ":%s///gc<Left><Left><Left>",
+  {
+    noremap = true,
+    desc = "Substitute last pattern."
+  }
+)
+vim.keymap.set(
+  "v",
+  "<leader>s",
+  "\"sy:%s/<C-r>s//<Left>",
+  {
+    noremap = true,
+    desc = "Substitute pattern prepopulated with visual selection.",
+  }
+)
+
+vim.keymap.set(
+  "n",
+  "<leader>S",
+  ":cdo s///g | update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>",
+  {
+    noremap = true,
+    desc = "(Quickfix list) Substitute pattern",
+  }
+)
+vim.keymap.set(
+  "v",
+  "<leader>S",
+  "\"sy:cdo s/<C-r>s//g | update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>",
+  {
+    noremap = true,
+    desc = "(Quickfix list) Substitute pattern prepopulated with visual selection.",
   }
 )
 
@@ -222,6 +239,8 @@ vim.keymap.set(
   }
 )
 
+vim.keymap.set("n", "-", vim.cmd.Ex)
+
 local function cmd_line_with_file()
   local file_path = vim.fn.fnamemodify(vim.fn.getline("."), ":p")
   vim.fn.feedkeys(":" ..
@@ -264,3 +283,23 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol)
 vim.keymap.set("n", "]g", function() vim.diagnostic.jump({ count = 1, float = true }) end)
 vim.keymap.set("n", "[g", function() vim.diagnostic.jump({ count = -1, float = true }) end)
+
+vim.keymap.set(
+  "",
+  "<ScrollWheelUp>",
+  "<C-Y>",
+  {
+    silent = true,
+    desc = "Smooth mouse wheel scroll."
+  }
+)
+vim.keymap.set(
+  "",
+  "<ScrollWheelDown>",
+  "<C-E>",
+  {
+    silent = true,
+    desc = "Smooth mouse wheel scroll."
+  }
+)
+

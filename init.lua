@@ -1,4 +1,4 @@
--- Save undo history to a file stored in `:h undodir`
+-- Saves undo history to a file stored in `:h undodir`.
 vim.o.undofile = true
 
 -- Refresh file every time you access the buffer.
@@ -12,10 +12,10 @@ vim.api.nvim_create_autocmd({ "FocusGained" }, {
   end,
 })
 
--- Enable mouse visual selection
+-- Enables mouse visual selection.
 vim.o.mouse = "a"
 
--- Enables Vim per-project configuration files
+-- Enables Vim per-project configuration files.
 vim.o.exrc = true
 vim.o.secure = true
 
@@ -28,13 +28,21 @@ vim.filetype.add({
 vim.o.completeopt = "menu,menuone,noinsert,popup,fuzzy"
 vim.o.cia = "kind,abbr,menu"
 
+vim.o.grepprg = "rg --vimgrep --smart-case"
+vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+
+-- Hides netrw banner.
+vim.g.netrw_banner = 0
+-- Fixes buggy netrw buffers not closing behavior:
+-- https://github.com/tpope/vim-vinegar/issues/13#issuecomment-489440040
+vim.g.netrw_fastbrowse = 0
+-- Fixes netrw buffers with empty % register:
+-- https://github.com/neovim/neovim/issues/17841#issuecomment-1077604089
+vim.o.hidden = false
+
 vim.o.updatetime = 200
 
-require("config_keymaps")
-require("config_theme")
-require("config_search_and_replace")
-
--- See https://github.com/neovim/nvim-lspconfig/tree/master/lsp for configurations
+-- See https://github.com/neovim/nvim-lspconfig/tree/master/lsp for configurations.
 vim.lsp.enable({
   "vtsls",
   "html",
@@ -51,4 +59,6 @@ vim.lsp.enable({
   "yamlls",
 })
 
+require("keymaps")
+require("theme")
 require("plugins")
