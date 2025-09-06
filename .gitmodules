@@ -25,9 +25,6 @@
 [submodule "pack/vim-test/start/vim-test"]
 	path = pack/vim-test/start/vim-test
 	url = https://github.com/vim-test/vim-test
-[submodule "pack/mfussenegger/start/nvim-dap"]
-	path = pack/mfussenegger/start/nvim-dap
-	url = https://github.com/mfussenegger/nvim-dap
 [submodule "pack/glacambre/start/firenvim"]
 	path = pack/glacambre/start/firenvim
 	url = https://github.com/glacambre/firenvim
