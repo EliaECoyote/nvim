@@ -84,8 +84,7 @@ fzf.setup({
     -- cf. https://github.com/ibhagwan/fzf-lua/wiki#custom-history
     ['--history'] = vim.fn.stdpath("data") .. "/fzf-lua-history",
   },
-  global = { git_icons = false, file_icons = true },
-  grep = { file_icons = true },
+  global = { git_icons = false },
   oldfiles = { cwd_only = true, include_current_session = true },
 })
 
