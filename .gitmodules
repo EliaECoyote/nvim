@@ -22,9 +22,6 @@
 [submodule "pack/ibhagwan/start/fzf-lua"]
 	path = pack/ibhagwan/start/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua
-[submodule "pack/ruanyl/start/vim-gh-line"]
-	path = pack/ruanyl/start/vim-gh-line
-	url = https://github.com/ruanyl/vim-gh-line
 [submodule "pack/vim-test/start/vim-test"]
 	path = pack/vim-test/start/vim-test
 	url = https://github.com/vim-test/vim-test

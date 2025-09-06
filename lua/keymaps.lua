@@ -319,3 +319,28 @@ vim.keymap.set(
     desc = "Smooth mouse wheel scroll."
   }
 )
+
+vim.keymap.set(
+  { "n", "v" },
+  "<leader>gh",
+  function()
+    local file = vim.fn.expand('%')
+    local start_line = vim.fn.line('.')
+    local end_line = vim.fn.line('v')
+    local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
+    local relative_file = vim.fn.fnamemodify(file, ':p'):gsub('^' .. git_root .. '/', '')
+    local remote = vim.fn.system("git config --get remote.origin.url"):gsub('\n', '')
+    local github_url = remote:gsub('git@github%.com:', 'https://github.com/'):gsub('%.git$', '')
+
+    if start_line > end_line then
+      start_line, end_line = end_line, start_line
+    end
+
+    -- Convert SSH to HTTPS and clean up
+    local line_range = start_line == end_line and 'L' .. start_line or 'L' .. start_line .. '-L' .. end_line
+    local url = github_url .. '/blob/master/' .. relative_file .. '#' .. line_range
+
+    vim.fn.system('open "' .. url .. '"')
+  end,
+  { desc = "Open current line on github." }
+)
