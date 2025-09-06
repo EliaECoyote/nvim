@@ -165,7 +165,7 @@ vim.g["test#preserve_screen"] = 0
 -- Reopen terminal split if not visible
 vim.g["test#neovim_sticky#reopen_window"] = 1
 
-vim.keymap.set("n", "<leader>tr", ":TestNearest<cr>")
+vim.keymap.set("n", "<leader>tt", ":TestNearest<cr>")
 vim.keymap.set("n", "<leader>tf", ":TestFile<cr>")
 vim.keymap.set("n", "<leader>tl", ":TestLast<cr>")
 vim.keymap.set(
