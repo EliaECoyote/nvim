@@ -1,5 +1,7 @@
 local utils_buffer = require("lib.utils_buffer")
 
+vim.keymap.set("n", "-", vim.cmd.Ex)
+
 vim.keymap.set(
   "",
   "<ScrollWheelUp>",
@@ -219,6 +221,42 @@ vim.keymap.set(
     desc = "Log with lua."
   }
 )
+
+local function cmd_line_with_file()
+  local file_path = vim.fn.fnamemodify(vim.fn.getline("."), ":p")
+  vim.fn.feedkeys(":" ..
+    file_path ..
+    vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
+    " " ..
+    vim.api.nvim_replace_termcodes("<Left>", true, false, true))
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    vim.keymap.set(
+      "n",
+      ".",
+      cmd_line_with_file,
+      { buffer = true, desc = "Open cmd line with file path" }
+    )
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    vim.keymap.set(
+      "n",
+      "!",
+      function()
+        cmd_line_with_file()
+        vim.fn.feedkeys("!")
+      end,
+      { buffer = true, desc = "Write command with file path" }
+    )
+  end,
+})
 
 vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
