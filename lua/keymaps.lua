@@ -1,24 +1,16 @@
 local utils_buffer = require("lib.utils_buffer")
 
--- Tabs mappings
 vim.keymap.set(
   "n",
   "tn",
   ":tabnew<cr>",
-  {
-    silent = true,
-    desc = "Tab new."
-  }
+  { desc = "Tab new." }
 )
-
 vim.keymap.set(
   "n",
   "td",
   ":tabclose<cr>",
-  {
-    silent = true,
-    desc = "Tab close."
-  }
+  { desc = "Tab close." }
 )
 
 vim.keymap.set(
@@ -100,19 +92,28 @@ vim.keymap.set(
   {
     noremap = true,
     silent = true,
-    desc = "Yanked text to-clipboard shortcut"
+    desc = "Yank text to clipboard."
   }
 )
-
 vim.keymap.set(
   "n",
   "yp",
   ":let @+ = expand(\"%\")<cr>",
   {
     noremap = true,
-    desc = "Yank % to clipboard"
+    desc = "Yank % to clipboard."
   }
 )
+vim.keymap.set(
+  "n",
+  "yo",
+  ":%y+<cr>",
+  {
+    noremap = true,
+    desc = "Yank buffer to clipboard.",
+  }
+)
+
 
 local VOCALS_ACCENTS = {
   a = "à",
@@ -127,7 +128,7 @@ local VOCALS_ACCENTS = {
   U = "Ù",
 }
 
--- Emulate backtick dead-key for accents
+-- Emulates backtick dead-key for accents.
 for key, value in pairs(VOCALS_ACCENTS) do
   vim.keymap.set(
     "i",
@@ -159,7 +160,6 @@ vim.keymap.set(
   end,
   {
     noremap = true,
-    silent = true,
     desc = "Delete current buffer."
   }
 )
@@ -175,7 +175,6 @@ vim.keymap.set(
   end,
   {
     noremap = true,
-    silent = true,
     desc = "Force delete current buffer."
   }
 )
@@ -216,20 +215,6 @@ vim.keymap.set(
 
 vim.keymap.set(
   "n",
-  "yo",
-  function()
-    vim.cmd("%y+")
-  end,
-  {
-    noremap = true,
-    silent = true,
-    desc = "Copy buffer to clipboard.",
-  }
-)
-
--- Prepare to print lua code
-vim.keymap.set(
-  "n",
   "<leader>l",
   ":lua vim.print()<left>",
   {
@@ -245,22 +230,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
     vim.keymap.set(
-      "n",
-      "!",
-      function()
-        local file_path = vim.fn.fnamemodify(vim.fn.getline("."), ":p")
-        vim.fn.feedkeys(":" ..
-          file_path ..
-          vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
-          " " ..
-          vim.api.nvim_replace_termcodes("<Left>", true, false, true) ..
-          "!"
-        )
-      end,
-      { buffer = true, desc = "Run cmd with file path." }
-    )
-    vim.keymap.set(
-      "v",
+      { "n", "v" },
       "!",
       function()
         local paths = {}
@@ -278,18 +248,17 @@ vim.api.nvim_create_autocmd("FileType", {
           end
         end
 
-        if #paths > 0 then
-          local path_string = table.concat(paths, " ")
-          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true) ..
-            ":" ..
-            path_string ..
-            vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
-            " " ..
-            vim.api.nvim_replace_termcodes("<Left>", true, false, true) ..
-            "!")
-        end
+        local path_string = table.concat(paths, " ")
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true) ..
+          ":" ..
+          path_string ..
+          vim.api.nvim_replace_termcodes("<Home>", true, false, true) ..
+          " " ..
+          vim.api.nvim_replace_termcodes("<Left>", true, false, true) ..
+          "!"
+        )
       end,
-      { buffer = true, desc = "Run cmd with multiple file paths." }
+      { desc = "Run cmd with file paths." }
     )
   end,
 })
@@ -301,24 +270,8 @@ vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol)
 vim.keymap.set("n", "]g", function() vim.diagnostic.jump({ count = 1, float = true }) end)
 vim.keymap.set("n", "[g", function() vim.diagnostic.jump({ count = -1, float = true }) end)
 
-vim.keymap.set(
-  "",
-  "<ScrollWheelUp>",
-  "<C-Y>",
-  {
-    silent = true,
-    desc = "Smooth mouse wheel scroll."
-  }
-)
-vim.keymap.set(
-  "",
-  "<ScrollWheelDown>",
-  "<C-E>",
-  {
-    silent = true,
-    desc = "Smooth mouse wheel scroll."
-  }
-)
+vim.keymap.set("", "<ScrollWheelUp>", "<C-Y>")
+vim.keymap.set("", "<ScrollWheelDown>", "<C-E>")
 
 vim.keymap.set(
   { "n", "v" },
