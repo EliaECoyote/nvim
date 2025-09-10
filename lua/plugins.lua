@@ -174,7 +174,7 @@ vim.keymap.set(
   "<leader>td",
   function()
     vim.g["test#go#runner"] = "delve"
-    vim.cmd("TestNearest")
+    vim.cmd("TestFile")
     vim.g["test#go#runner"] = nil
   end,
   {
