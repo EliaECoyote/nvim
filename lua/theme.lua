@@ -10,7 +10,7 @@ vim.go.background = "light"
 vim.cmd.colorscheme("default_tweaked")
 
 -- Winborder style
-vim.o.winborder = "solid"
+vim.o.winborder = "bold"
 
 -- Global statusline
 vim.opt.laststatus = 3
