@@ -38,7 +38,7 @@ vim.keymap.set(
   ":cdo s///g | update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>",
   {
     noremap = true,
-    desc = "(Quickfix list) Substitute pattern",
+    desc = "(Quickfix list) Substitute pattern.",
   }
 )
 vim.keymap.set(
@@ -204,13 +204,13 @@ vim.keymap.set(
   "c",
   "<M-b>",
   "<S-Left>",
-  { desc = "Move to prev word" }
+  { desc = "Move to prev word." }
 )
 vim.keymap.set(
   "c",
   "<M-f>",
   "<S-Right>",
-  { desc = "Move to next word" }
+  { desc = "Move to next word." }
 )
 
 vim.keymap.set(
@@ -266,6 +266,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help)
 vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol)
 vim.keymap.set("n", "]g", function() vim.diagnostic.jump({ count = 1, float = true }) end)
 vim.keymap.set("n", "[g", function() vim.diagnostic.jump({ count = -1, float = true }) end)

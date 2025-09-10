@@ -24,6 +24,9 @@ blink.setup({
     ["<C-space>"] = false,
   },
   completion = {
+    menu = { border = "none" },
+    auto_show_delay_ms = 100,
+    list = { selection = { preselect = false, auto_insert = true } },
     documentation = {
       auto_show = true,
       auto_show_delay_ms = 1500,
@@ -177,7 +180,7 @@ vim.keymap.set(
   end,
   {
     noremap = true,
-    desc = "Debug nearest go test"
+    desc = "Debug nearest go test."
   }
 )
 vim.keymap.set(
@@ -205,7 +208,7 @@ vim.keymap.set(
   end,
   {
     noremap = true,
-    desc = "Send delve breakpoint command to terminal"
+    desc = "Send delve breakpoint command to terminal."
   }
 )
 
