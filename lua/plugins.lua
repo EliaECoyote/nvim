@@ -154,6 +154,7 @@ end)
 vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
 vim.keymap.set("n", "gra", fzf.lsp_code_actions)
+vim.keymap.set("n", "gri", fzf.lsp_implementations)
 
 -- https://github.com/vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
