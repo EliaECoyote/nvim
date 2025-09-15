@@ -278,11 +278,11 @@ vim.keymap.set(
   { "n", "v" },
   "<leader>gh",
   function()
-    local file = vim.fn.expand('%')
+    local file = vim.fn.expand('%:p')
+    local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
+    local relative_file = vim.fn.fnamemodify(file, ':.' .. git_root)
     local start_line = vim.fn.line('.')
     local end_line = vim.fn.line('v')
-    local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
-    local relative_file = vim.fn.fnamemodify(file, ':p'):gsub('^' .. git_root .. '/', '')
     local remote = vim.fn.system("git config --get remote.origin.url"):gsub('\n', '')
     local github_url = remote:gsub('git@github%.com:', 'https://github.com/'):gsub('%.git$', '')
 
