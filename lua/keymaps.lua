@@ -268,21 +268,27 @@ vim.keymap.set(
   { "n", "v" },
   "<leader>gh",
   function()
-    local file = vim.fn.expand('%:p')
-    local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub('\n', '')
-    local relative_file = vim.fn.fnamemodify(file, ':.' .. git_root)
-    local start_line = vim.fn.line('.')
-    local end_line = vim.fn.line('v')
-    local remote = vim.fn.system("git config --get remote.origin.url"):gsub('\n', '')
+    local function trim(s) return (s:gsub("%s+$", "")) end
+    local function esc(s) return (s:gsub("([^%w])", "%%%1")) end
+
+    local file = vim.fn.expand("%:p") -- absolute path
+    local git_root = trim(vim.fn.system("git rev-parse --show-toplevel"))
+    if git_root == "" then return end
+
+    local remote = trim(vim.fn.system("git config --get remote.origin.url"))
+    local commit = trim(vim.fn.system("git rev-parse HEAD"))
+    local relative_file = file:gsub("^" .. esc(git_root .. "/"), "")
+
+    local start_line = vim.fn.line(".")
+    local end_line = vim.fn.line("v")
+    if start_line > end_line then start_line, end_line = end_line, start_line end
+    local line_range = (start_line == end_line)
+        and ("L" .. start_line)
+        or ("L" .. start_line .. "-L" .. end_line)
+
     local github_url = remote:gsub('git@github%.com:', 'https://github.com/'):gsub('%.git$', '')
 
-    if start_line > end_line then
-      start_line, end_line = end_line, start_line
-    end
-
-    -- Convert SSH to HTTPS and clean up
-    local line_range = start_line == end_line and 'L' .. start_line or 'L' .. start_line .. '-L' .. end_line
-    local url = github_url .. '/blob/master/' .. relative_file .. '#' .. line_range
+    local url = string.format("%s/blob/%s/%s#%s", github_url, commit, relative_file, line_range)
 
     vim.fn.system('open "' .. url .. '"')
   end,
