@@ -72,6 +72,7 @@ require("fidget").setup({})
 -- https://github.com/ibhagwan/fzf-lua
 local fzf = require("fzf-lua")
 fzf.setup({
+  silent = true,
   winopts = {
     width     = 1,
     height    = 20,
@@ -86,8 +87,27 @@ fzf.setup({
     -- cf. https://github.com/ibhagwan/fzf-lua/wiki#custom-history
     ['--history'] = vim.fn.stdpath("data") .. "/fzf-lua-history",
   },
-  global = { git_icons = false },
-  oldfiles = { cwd_only = true, include_current_session = true },
+  keymap = {
+    builtin = {
+      true,
+      ["<M-Right>"] = false,
+      ["M-Right"] = false,
+      ["M-<Right>"] = false,
+    }
+  },
+  global = {
+    git_icons = false,
+    silent = true,
+    keymap = {
+      builtin = {
+        true,
+        ["M-<Right>"] = false,
+      }
+    },
+  },
+  oldfiles = { cwd_only = true, include_current_session = true, silent = true },
+  live_grep = { silent = true },
+  finder = { silent = true }
 })
 
 fzf.register_ui_select(function(_, items)
@@ -155,6 +175,7 @@ vim.keymap.set("n", "grr", fzf.lsp_references)
 vim.keymap.set("n", "gd", fzf.lsp_definitions)
 vim.keymap.set("n", "gra", fzf.lsp_code_actions)
 vim.keymap.set("n", "gri", fzf.lsp_implementations)
+vim.keymap.set("n", "grs", fzf.lsp_document_symbols)
 
 -- https://github.com/vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
