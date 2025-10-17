@@ -140,16 +140,6 @@ end
 
 vim.keymap.set(
   "n",
-  "<leader>bo",
-  ":%bd|e#<cr>",
-  {
-    noremap = true,
-    silent = true,
-    desc = "Delete other buffers."
-  }
-)
-vim.keymap.set(
-  "n",
   "<leader>bd",
   function()
     if utils_buffer.delete_buffer(0, { force = true, unload = true }, false) then
