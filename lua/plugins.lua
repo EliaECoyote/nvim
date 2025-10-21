@@ -176,6 +176,20 @@ vim.keymap.set("n", "gd", fzf.lsp_definitions)
 vim.keymap.set("n", "gra", fzf.lsp_code_actions)
 vim.keymap.set("n", "gri", fzf.lsp_implementations)
 vim.keymap.set("n", "grs", fzf.lsp_document_symbols)
+vim.keymap.set("n", "<A-c>", function()
+  fzf.files({
+    fd_opts = "--type d --hidden --exclude .git",
+    prompt  = "dirs> ",
+    actions = {
+      ["default"] = function(selected)
+        local dir = selected and selected[1]
+        if dir and #dir > 0 then
+          vim.cmd("tcd " .. vim.fn.fnameescape(dir))
+        end
+      end,
+    },
+  })
+end, { desc = "fzf_cd into :tcd" })
 
 -- https://github.com/vim-test/vim-test
 vim.g["test#strategy"] = "neovim"
