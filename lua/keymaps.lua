@@ -202,6 +202,12 @@ vim.keymap.set(
   "<S-Right>",
   { desc = "Move to next word." }
 )
+vim.keymap.set(
+  'c',
+  '<M-BS>',
+  '<C-w>',
+  { desc = "Del prev word." }
+)
 
 vim.keymap.set(
   "n",
