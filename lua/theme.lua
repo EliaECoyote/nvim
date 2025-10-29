@@ -23,7 +23,7 @@ vim.opt.autoindent = true
 vim.opt.signcolumn = "yes:1"
 
 -- Use spaces instead of tabs
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
