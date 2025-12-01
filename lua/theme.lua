@@ -42,7 +42,10 @@ vim.opt.textwidth = 0
 vim.opt.foldenable = false
 
 -- Makes vimdiff easier to read
-vim.opt.diffopt:append("vertical")
+vim.opt.diffopt:append({
+  "algorithm:histogram",
+  "vertical",
+})
 
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
