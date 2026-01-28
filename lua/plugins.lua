@@ -265,3 +265,11 @@ if vim.g.started_by_firenvim then
   vim.opt.guifont = "FiraMono Nerd Font Mono"
   vim.opt.laststatus = 0
 end
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "github.com_*.txt",
+  command = "set filetype=markdown",
+})
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "leetcode.com_*.txt",
+  command = "set filetype=python",
+})
