@@ -1,5 +1,8 @@
 local utils_buffer = require("lib.utils_buffer")
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.keymap.set(
   "n",
   "tn",

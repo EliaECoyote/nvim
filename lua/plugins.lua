@@ -123,7 +123,7 @@ end)
 
 vim.keymap.set("n", "<leader>f?", fzf.builtin)
 vim.keymap.set("n", "<C-t>", fzf.global)
-vim.keymap.set("n", "<leader>\\", fzf.buffers)
+vim.keymap.set("n", "<leader><space>", fzf.buffers)
 vim.keymap.set("n", "<leader><C-r>", fzf.oldfiles)
 vim.keymap.set("n", "<leader>fr", fzf.resume)
 vim.keymap.set("n", "<leader>ff", fzf.live_grep)
