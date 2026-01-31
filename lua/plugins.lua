@@ -254,10 +254,10 @@ vim.g.firenvim_config = {
   localSettings = {
     [".*"] = {
       priority = 0,
-      cmdline  = "neovim",
-      content  = "text",
       takeover = "never",
-      guifont  = "monospace:h50"
+    },
+    ["https?://leetcode.com/.*"] = {
+      takeover = "always",
     }
   }
 }
@@ -271,5 +271,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 })
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = "leetcode.com_*.txt",
-  command = "set filetype=python",
+  callback = function()
+    vim.bo.filetype = "python"
+    vim.diagnostic.enable(false)
+  end,
 })
