@@ -42,9 +42,9 @@ vim.g.gitgutter_signs = 0
 vim.g.gitgutter_highlight_linenrs = 1
 
 -- https://github.com/nvim-treesitter/nvim-treesitter
-local treesitter_configs = require("nvim-treesitter.configs")
+local ts = require("nvim-treesitter")
 
-treesitter_configs.setup({
+ts.setup({
   auto_install = true,
   highlight = {
     enable = true,
