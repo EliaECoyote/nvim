@@ -262,8 +262,9 @@ vim.g.firenvim_config = {
   }
 }
 if vim.g.started_by_firenvim then
-  vim.opt.guifont = "FiraMono Nerd Font Mono"
+  vim.opt.guifont = "FiraMono Nerd Font Mono:h22"
   vim.opt.laststatus = 0
+  vim.opt.signcolumn = "no"
 end
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = "github.com_*.txt",
