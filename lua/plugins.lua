@@ -93,7 +93,12 @@ fzf.setup({
       ["<M-Right>"] = false,
       ["M-Right"] = false,
       ["M-<Right>"] = false,
-    }
+    },
+    fzf = {
+      true,
+      -- cf. https://github.com/ibhagwan/fzf-lua/wiki#how-do-i-send-all-grep-results-to-quickfix-list
+      ["ctrl-q"] = "select-all+accept",
+    },
   },
   global = {
     git_icons = false,
