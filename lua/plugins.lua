@@ -100,7 +100,7 @@ fzf.setup({
       ["ctrl-q"] = "select-all+accept",
     },
   },
-  global = {
+  files = {
     git_icons = false,
     silent = true,
     keymap = {
@@ -127,7 +127,7 @@ fzf.register_ui_select(function(_, items)
 end)
 
 vim.keymap.set("n", "<leader>f?", fzf.builtin)
-vim.keymap.set("n", "<C-t>", fzf.global)
+vim.keymap.set("n", "<C-t>", fzf.files)
 vim.keymap.set("n", "<leader><space>", fzf.buffers)
 vim.keymap.set("n", "<leader><C-r>", fzf.oldfiles)
 vim.keymap.set("n", "<leader>fr", fzf.resume)
