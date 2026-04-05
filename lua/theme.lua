@@ -2,7 +2,7 @@
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })
 
@@ -62,15 +62,6 @@ vim.opt.guicursor = ""
 -- Highlights end-of-line
 vim.opt.list = true
 vim.opt.listchars = { tab = "· ", trail = "·", precedes = "<", extends = ">" }
-
-vim.g.markdown_fenced_languages = {
-  "html",
-  "python",
-  "lua",
-  "vim",
-  "typescript",
-  "javascript",
-}
 
 function _G.custom_status_line()
   local file_name = "%-.16t"
