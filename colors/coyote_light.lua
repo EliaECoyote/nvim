@@ -1,3 +1,4 @@
+vim.o.background = "light"
 vim.cmd("colorscheme default")
 
 local accent = "DarkMagenta"

@@ -6,8 +6,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.go.background = "light"
-vim.cmd.colorscheme("default_tweaked")
+vim.cmd.colorscheme("coyote_dark")
 
 -- Winborder style
 vim.o.winborder = "bold"
