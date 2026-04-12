@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.o.termguicolors = false
 vim.cmd.colorscheme("coyote_dark")
 
 -- Winborder style
