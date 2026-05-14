@@ -24,7 +24,7 @@ blink.setup({
     ["<C-space>"] = false,
   },
   completion = {
-    menu = { border = "none" },
+    menu = { border = "none", max_height = 3 },
     list = { selection = { preselect = false, auto_insert = true } },
     documentation = {
       auto_show = true,
