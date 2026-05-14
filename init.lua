@@ -59,6 +59,23 @@ vim.lsp.enable({
   "yamlls",
 })
 
+vim.pack.add({
+  "https://github.com/tpope/vim-commentary",
+  "https://github.com/tpope/vim-fugitive",
+  "https://github.com/tpope/vim-surround",
+  "https://github.com/nvim-lua/plenary.nvim",
+  "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/j-hui/fidget.nvim",
+  "https://github.com/ibhagwan/fzf-lua",
+  "https://github.com/vim-test/vim-test",
+  "https://github.com/glacambre/firenvim",
+  "https://github.com/airblade/vim-gitgutter",
+  "https://github.com/nvimtools/none-ls.nvim",
+  "https://github.com/Saghen/blink.lib",
+  "https://github.com/Saghen/blink.cmp",
+})
+
 require("keymaps")
 require("theme")
 require("plugins")

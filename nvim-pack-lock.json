@@ -1,0 +1,60 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "2ef3db111181c5eef22a462aa0122349a6027f28",
+      "src": "https://github.com/Saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "src": "https://github.com/Saghen/blink.lib"
+    },
+    "fidget.nvim": {
+      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "firenvim": {
+      "rev": "ab0e51bfa4e01191d0bfd1eee15388ac816e702e",
+      "src": "https://github.com/glacambre/firenvim"
+    },
+    "fzf-lua": {
+      "rev": "23f71140754b9162551dc8ccc1d6346e4275ecc2",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "none-ls.nvim": {
+      "rev": "f9d557ac7cd28a3a993b5ea49716498bd540b01f",
+      "src": "https://github.com/nvimtools/none-ls.nvim"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "vim-commentary": {
+      "rev": "64a654ef4a20db1727938338310209b6a63f60c9",
+      "src": "https://github.com/tpope/vim-commentary"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-gitgutter": {
+      "rev": "21c977e8597c468c7dc76001389b0b430d46a4b0",
+      "src": "https://github.com/airblade/vim-gitgutter"
+    },
+    "vim-surround": {
+      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
+      "src": "https://github.com/tpope/vim-surround"
+    },
+    "vim-test": {
+      "rev": "7062b50979a28e804081f0e82b7321184ec1c20b",
+      "src": "https://github.com/vim-test/vim-test"
+    }
+  }
+}
